@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Electoral Bond Data - 1 | My New Hugo Site</title>
+<meta name="keywords" content="">
+<meta name="description" content="Domain Knowledge : Description: In a significant development affecting political transparency in India, the Supreme Court delivered a landmark judgment striking down the Electoral Bond scheme. This ruling, grounded in the principle that anonymity in political funding undermines voters&rsquo; right to information, mandates transparency in political party funding sources. The decision represents a crucial step in India&rsquo;s ongoing efforts to enhance transparency and accountability in political financing, aligning with democratic values and public demands for openness.">
+<meta name="author" content="">
+<link rel="canonical" href="http://localhost:1313/posts/eda_with_sql/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/eda_with_sql/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="http://localhost:1313/" accesskey="h" title="My New Hugo Site (Alt + H)">My New Hugo Site</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Electoral Bond Data - 1
+    </h1>
+    <div class="post-meta"><span title='2024-04-22 08:09:41 +0530 IST'>April 22, 2024</span>
+
+</div>
+  </header> 
+  <div class="post-content"><hr>
+<h1 id="domain-knowledge-">Domain Knowledge :<a hidden class="anchor" aria-hidden="true" href="#domain-knowledge-">#</a></h1>
+<p><strong>Description:</strong>  </p>
+<p>In a significant development affecting political transparency in India, the Supreme Court delivered a landmark judgment striking down the Electoral Bond scheme. This ruling, grounded in the principle that anonymity in political funding undermines voters&rsquo; right to information, mandates transparency in political party funding sources. The decision represents a crucial step in India&rsquo;s ongoing efforts to enhance transparency and accountability in political financing, aligning with democratic values and public demands for openness.</p>
+<p>In response to this judgment, the Election Commission of India (ECI), under the Supreme Court&rsquo;s directive, released comprehensive data on March 21, 2024, through the State Bank of India (SBI). This dataset, available on the ECI&rsquo;s official website, encompasses information on donors and recipients from April 12, 2019, to January 11, 2024, including bond numbers for matching purchasers and recipients of the bonds. To further enrich the analysis of political funding in India, this dataset is being supplemented with additional data from the Enforcement Directorate.</p>
+<p>The Election Commission published two separate lists of donors and recipients on its website after receiving details from the State Bank of India in accordance with a Supreme Court order.</p>
+<p>On March 21, the Election Commission made public a new dataset of electoral bonds, including their alphanumeric numbers that can facilitate matching purchasers with the political parties that received the funds.</p>
+<hr>
+<h2 id="data-sources">Data Sources<a hidden class="anchor" aria-hidden="true" href="#data-sources">#</a></h2>
+<p>These are the official Sites where the data is released by the government.</p>
+<p><a href="https://www.eci.gov.in/disclosure-of-electoral-bonds">https://www.eci.gov.in/disclosure-of-electoral-bonds</a></p>
+<p><a href="https://enforcementdirectorate.gov.in/press-release">https://enforcementdirectorate.gov.in/press-release</a> ( Data available only since 2021 )</p>
+<p><a href="https://cag.gov.in/en/audit-report">https://cag.gov.in/en/audit-report</a> ( Data extracted from 2018 )</p>
+<p><a href="https://incometaxindia.gov.in/Pages/press-releases.aspx">https://incometaxindia.gov.in/Pages/press-releases.aspx</a> ( Data extracted from 2010 )</p>
+<p><a href="https://cbi.gov.in/press-releases">https://cbi.gov.in/press-releases</a> ( Data extracted from 2018 )</p>
+<p><a href="https://www.mca.gov.in/content/mca/global/en/mca/master-data/MDS.html">https://www.mca.gov.in/content/mca/global/en/mca/master-data/MDS.html</a>  </p>
+<p>The Bank codes details have been extracted from this website:</p>
+<blockquote>
+<p>All the bank banches don&rsquo;t have the authority to issue electoral bonds only few branches of SBI bank can issue them and this table contains the details of that banks and based on the branch code we can connect to the receiver and donor data.</p>
+</blockquote>
+<ul>
+<li><a href="https://pib.gov.in/Pressreleaseshare.aspx?PRID=1566604">pib.gov</a></li>
+</ul>
+<blockquote>
+<p>Note: We obtained the dataset from Kaggle, which is available in comma-separated format (CSV). Unlike the sources above mentioned that provide data in PDF format but they are the official sites and even the data from Kaggle is just format converted, CSV is more accessible for analysis and processing.</p>
+</blockquote>
+<p><strong>Kaggle Sources</strong> :</p>
+<p><a href="https://www.kaggle.com/datasets/uplytics/electoral-bonds-india-complete-2024-dataset/data">https://www.kaggle.com/datasets/uplytics/electoral-bonds-india-complete-2024-dataset/data</a></p>
+<hr>
+<h2 id="data-dictionary">Data Dictionary<a hidden class="anchor" aria-hidden="true" href="#data-dictionary">#</a></h2>
+<h3 id="data-tables-our-data-has-3-table">Data Tables: Our Data has 3 Table<a hidden class="anchor" aria-hidden="true" href="#data-tables-our-data-has-3-table">#</a></h3>
+<table>
+<thead>
+<tr>
+<th>NO</th>
+<th>Table Name</th>
+<th>Table Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Donor Data</td>
+<td>This table has details about Company/Organization/Individuals and bonds they bought.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Receiver Data</td>
+<td>This table has details about Political Parties and the bonds they received.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bank Data</td>
+<td>This table has the details about the bank branches where bonds can be issued or enchased.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="donor-data-">Donor Data :<a hidden class="anchor" aria-hidden="true" href="#donor-data-">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Column Name</th>
+<th>Elaborated Column Name</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>SNo</td>
+<td>Serial number.</td>
+<td>A sequential number assigned to each record in the dataset to uniquely identify and order individual entries.</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Urn</td>
+<td>Unique reference number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>JournalDate</td>
+<td>Date of journal entry</td>
+<td>The date when the purchaser has requested for an electoral</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>PurchaseDate</td>
+<td>Date of bond purchase</td>
+<td>The date when the purchaser has got for an electoral</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>ExpiryDate</td>
+<td>Expiry date of the bond</td>
+<td>The date when the bond gets expired after that data the bond cannot be encashed</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Purchaser</td>
+<td>Name of the purchaser</td>
+<td>The Name of organization/Company/Individuals who bought the bond.</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Prefix</td>
+<td>Prefix code associated with the bond</td>
+<td>Each Bond has a Prefix just like a currency</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>BondNumber</td>
+<td>A Number Followed By Prefix Code</td>
+<td>Each Bond has a number just like a currency</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Denominations</td>
+<td>Value of the bond</td>
+<td>The value of each Bond and total 5 different values are possible : [1K, 10K, 1lac, 10lac, 1Cr ]</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>PayBranchCode</td>
+<td>Payment Branch code</td>
+<td>It is the branch code (IFSC Code) of the bank branch where  the bond is issued.</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>PayTeller</td>
+<td>Teller ID</td>
+<td>It is the employee id who issued the bond.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="recipient-data-">Recipient Data :<a hidden class="anchor" aria-hidden="true" href="#recipient-data-">#</a></h4>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Column Name</th>
+<th>Elaborated Column Name</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>SNo</td>
+<td>Serial number.</td>
+<td>A sequential number assigned to each record in the dataset to uniquely identify and order individual entries.</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>DateEncashment</td>
+<td>Date of bond encashment</td>
+<td>The date when the bond has been enchased by a political party.</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>PartyName</td>
+<td>Name of the political party (recipient).</td>
+<td>The Political Party that enchashed the bond.</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>AccountNum</td>
+<td>Account number of the party</td>
+<td>The column displays the account number of the encashed party, where the last four digits are visible, and the preceding digits are obscured with asterisks (*) to ensure privacy.</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Prefix</td>
+<td>Prefix code associated with the bond.</td>
+<td>Each Bond has a Prefix just like a currency.</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>BondNumber</td>
+<td>A Number Followed By Prefix Code</td>
+<td>Each Bond has a number just like a currency</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Denominations</td>
+<td>Value of the bond</td>
+<td>The value of each Bond and total 5 different values are possible : [1K, 10K, 1lac, 10lac, 1Cr ]</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>PayBranchCode</td>
+<td>Payment Branch code</td>
+<td>It is the branch code (IFSC Code) of the bank branch where  the bond is encashed.</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>PayTeller</td>
+<td>Teller ID</td>
+<td>It is the employee id who encashed the bond.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="bank-branch-data">Bank Branch Data:<a hidden class="anchor" aria-hidden="true" href="#bank-branch-data">#</a></h4>
+<p>Only few SBI branches are authorized to issue and enchase  Electoral bond  and this table has the details of those branches.</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Column Name</th>
+<th>Elaborated Column Name</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Sl.No.</td>
+<td>Serial number.</td>
+<td>A sequential number assigned to each record in the dataset to uniquely identify and order individual entries.</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>State/UT</td>
+<td>State/UT</td>
+<td>State where the bank is assigned</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Name of the Branch &amp; Address</td>
+<td>Name of the Branch &amp; Address</td>
+<td>This is the complete address of the bank</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>City</td>
+<td>City</td>
+<td>City where the bank brank is located</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Branch Code No</td>
+<td>IFSC Code</td>
+<td>IFCS Code is the Unique code that is assigned for every branch and based on the ID we can identify any bank branch</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="domain-knowledge">Domain Knowledge<a hidden class="anchor" aria-hidden="true" href="#domain-knowledge">#</a></h3>
+<p>Before we start Analyzing the data we need to have an understanding of our problem statement which is referred as domain knowledge and below section is a little effort to impart that knowledge.</p>
+<p>Each bond is characterized by a prefix and a bond number. While these components individually lack uniqueness, together they form a distinct identification ID. By comparing and matching these unique codes across tables, we can discern the relationship between donors and receivers, thereby identifying the source of monetary donations to specific political parties.</p>
+<p>In donor table and receivers table we have a branch code where one is the bond issuing branch code and the other is  the branch where the bond is enchased respectively by joining that table with bank branch data we can understand how money is flowing from city to city.</p>
+<p>Every bond has 14 days of validation before it gets expired so if the bond is not enchased by any political party them the amount will be transferred to prime minister fund.</p>
+<p>The data released by the government is not complete as the records count in receivers table and that of the donors table is not same and those consideration are taken into our analysis work.</p>
+<p>Certain companies have acquired bonds under slightly varied names, prompting us to analyze and correct these discrepancies with a degree of due diligence. These adjustments can be referenced in the data cleaning section of the code.</p>
+<hr>
+<pre><code>                                                                               --by 
+                                                                               V. M R 
+</code></pre>
+<hr>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="http://localhost:1313/">My New Hugo Site</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Bonddata on My New Hugo Site</title>
-    <link>http://localhost:1313/tags/bonddata/</link>
+    <link>https://dadscareerpedia.github.io/tags/bonddata/</link>
     <description>Recent content in Bonddata on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Apr 2024 06:50:30 +0530</lastBuildDate><atom:link href="http://localhost:1313/tags/bonddata/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Apr 2024 06:50:30 +0530</lastBuildDate><atom:link href="https://dadscareerpedia.github.io/tags/bonddata/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Schema 2</title>
-      <link>http://localhost:1313/posts/schema-2/</link>
+      <link>https://dadscareerpedia.github.io/posts/schema-2/</link>
       <pubDate>Wed, 24 Apr 2024 06:50:30 +0530</pubDate>
       
-      <guid>http://localhost:1313/posts/schema-2/</guid>
+      <guid>https://dadscareerpedia.github.io/posts/schema-2/</guid>
       <description>In this section We are going to create the SQL schema and the choice of SQL I went with is mysql. You can use any SQL variant of your choice but you need to refer to the documentation to find the appropriate data types.
 Creating the database and using it an the name of database is electoralbonddata. CREATE DATABASE IF NOT EXISTS `electoralbonddata` USE `electoralbonddata`; Creating the bank data table.</description>
       <content:encoded><![CDATA[<p><img loading="lazy" src="/img/raw_data_4.png" type="" alt=""  /></p>
@@ -48,7 +48,7 @@ Creating the database and using it an the name of database is electoralbonddata.
 <li>Creating Donor data table</li>
 </ul>
 <p><img loading="lazy" src="/img/donorstable.png" type="" alt=""  /></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>donordata<span style="color:#f92672">`</span>; <span style="color:#75715e">-- just to make sure no table of that name does&#39;nt exit.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>donordata<span style="color:#f92672">`</span>; <span style="color:#75715e">-- just to make sure no table of that name does&#39;nt exit.
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>donordata<span style="color:#f92672">`</span> (
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>Urn<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">30</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>JournalDate<span style="color:#f92672">`</span> date <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
@@ -80,17 +80,53 @@ Creating the database and using it an the name of database is electoralbonddata.
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CONSTRAINT</span> <span style="color:#f92672">`</span>reciverdata_ibfk_1<span style="color:#f92672">`</span> <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>Unique_key<span style="color:#f92672">`</span>) <span style="color:#66d9ef">REFERENCES</span> <span style="color:#f92672">`</span>bonddata<span style="color:#f92672">`</span> (<span style="color:#f92672">`</span>Unique_key<span style="color:#f92672">`</span>),
 </span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CONSTRAINT</span> <span style="color:#f92672">`</span>reciverdata_ibfk_2<span style="color:#f92672">`</span> <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>PayBranchCode<span style="color:#f92672">`</span>) <span style="color:#66d9ef">REFERENCES</span> <span style="color:#f92672">`</span>bankdata<span style="color:#f92672">`</span> (<span style="color:#f92672">`</span>branchCodeNo<span style="color:#f92672">`</span>)
 </span></span><span style="display:flex;"><span>);
-</span></span></code></pre></div><p>So this is how we create the table and the final schema is going to look like this</p>
-<p>![](/img/Final Schema.png)</p>
+</span></span></code></pre></div><p>So this is how we create the table and the final schema is going to look like this &#x1f447;</p>
+<p><img loading="lazy" src="/img/Final_Schema.png" type="" alt=""  /></p>
+<p>We can import the csv files into each table using import wizard. All the tabels can be exported with this method except for bank data table because it has commas in the data leading to conflicts in CSV file export, So for this one you can directly write insert statement as there are total 29 entries or You can directly send the data frames to the tables using mysql connector and sqlalchemy library.</p>
+<p>Here I am sharing the code for inserting the values in bankdata table.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>bankdata<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;West Bengal and Andaman&amp; Nicobar&#39;</span>,<span style="color:#e6db74">&#39;Kolkata Main Branch,Samriddhi Bhawan1, Strand Road, Kolkata, West Bengal,District :Kolkata. State: West Bengal.Pin : 700001&#39;</span>,<span style="color:#e6db74">&#39;Kolkata&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">2</span>,<span style="color:#e6db74">&#39;Tripura&#39;</span>,<span style="color:#e6db74">&#39;Agartala BranchHari Ganga Basak Road,Agartala, District: Tripura (W), Tripura, Pin: 799001&#39;</span>,<span style="color:#e6db74">&#39;Agartala&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">41</span>,<span style="color:#e6db74">&#39;Odisha&#39;</span>,<span style="color:#e6db74">&#39;Bhubaneswar Main BranchP.B.No.14, BhubaneswarBhubaneswar, Orissa. District : KhurdaState: Odisha, Pin : 751001&#39;</span>,<span style="color:#e6db74">&#39;Bhubaneswar&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">78</span>,<span style="color:#e6db74">&#39;Assam&#39;</span>,<span style="color:#e6db74">&#39;Guwahati Branch,Pan Bazar,MG Road, Kamrup, Guwahati.  Pin: 781001&#39;</span>,<span style="color:#e6db74">&#39;Guwahati&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">92</span>,<span style="color:#e6db74">&#39;Manipur&#39;</span>,<span style="color:#e6db74">&#39;lmphal BranchM G Avenue, lmphal west, Manipur, Pin: 795001&#39;</span>,<span style="color:#e6db74">&#39;Imphal&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">125</span>,<span style="color:#e6db74">&#39;Uttar Pradesh&#39;</span>,<span style="color:#e6db74">&#39;Lucknow Main Branch,Tarawali Kothi, Motimahal Marg,Hazratganj, Lucknow, Uttar PradeshDistrict : Lucknow, State: Uttar PradeshPin:  226001&#39;</span>,<span style="color:#e6db74">&#39;Lucknow&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">152</span>,<span style="color:#e6db74">&#39;Bihar&#39;</span>,<span style="color:#e6db74">&#39;Patna Main BranchWest Gandhi Maidhan, Patna, Bihar.Pin: 800001&#39;</span>,<span style="color:#e6db74">&#39;Patna&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">167</span>,<span style="color:#e6db74">&#39;Jharkhand&#39;</span>,<span style="color:#e6db74">&#39;Ranchi BranchCourt Compound, RanchiJharkhand, District : Ranchi,State: Jharkhand, Pin : 834001&#39;</span>,<span style="color:#e6db74">&#39;Ranchi&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">181</span>,<span style="color:#e6db74">&#39;Meghalaya&#39;</span>,<span style="color:#e6db74">&#39;Shillong BranchMG road, Near General PO Shillong,District: Khasi Hills (E), Meghalaya, Pin: 793001&#39;</span>,<span style="color:#e6db74">&#39;Shilong&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">214</span>,<span style="color:#e6db74">&#39;Nagaland&#39;</span>,<span style="color:#e6db74">&#39;Kohima BranchNear deputy commissioner officeKohima, Nagaland, Pin: 797001&#39;</span>,<span style="color:#e6db74">&#39;Kohima&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">232</span>,<span style="color:#e6db74">&#39;Sikkim&#39;</span>,<span style="color:#e6db74">&#39;Gangtok BranchM G Marg, Gangtok SIKKIMDist: East Sikkim, State : Sikkim Pin : 737101&#39;</span>,<span style="color:#e6db74">&#39;Gangtok&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">300</span>,<span style="color:#e6db74">&#39;Maharashtra&#39;</span>,<span style="color:#e6db74">&#39;Mumbai Main Branch,Mumbai Samachar MargHorniman Circle, Fort, Mumbai,Maharashtra   Pin : 400001&#39;</span>,<span style="color:#e6db74">&#39;Mumbai&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">461</span>,<span style="color:#e6db74">&#39;Chhattisgarh&#39;</span>,<span style="color:#e6db74">&#39;Raipur Main BranchP.B.N0.29/61, Jaistambh Chowk, Raipur,District : Raipur, State : Chhatisgarh, Pin: 492001&#39;</span>,<span style="color:#e6db74">&#39;Raipur&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">509</span>,<span style="color:#e6db74">&#39;Goa, Lakshadweep&#39;</span>,<span style="color:#e6db74">&#39;Panaji BranchOpp : Hotel Mandovi, Dayanand,Dayanand Bandodkar Marg,Panaji, Goa . District : North Goa, State : Goa,Pin: 403001&#39;</span>,<span style="color:#e6db74">&#39;Panaji&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">628</span>,<span style="color:#e6db74">&#39;Haryana, Punjab and Chandigarh&#39;</span>,<span style="color:#e6db74">&#39;Chandigarh Main Branch,SCO 43-48, Banking Square,Sector-17B, Chandigarh, State: Chandigarh,Pin : 160017&#39;</span>,<span style="color:#e6db74">&#39;Chandigarh&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">630</span>,<span style="color:#e6db74">&#39;Uttarakhand&#39;</span>,<span style="color:#e6db74">&#39;Dehra Dun Main Branch4, Convent Road, DehradunUttarakhand , State: Uttarakhand Pin : 248001&#39;</span>,<span style="color:#e6db74">&#39;Dehradun&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">656</span>,<span style="color:#e6db74">&#39;Rajasthan&#39;</span>,<span style="color:#e6db74">&#39;Jaipur Main Branch, P.B.No.72,Sanganeri Gate, Jaipur, RajasthanDistrict :Jaipur, State: Rajasthan,  Pin : 302003&#39;</span>,<span style="color:#e6db74">&#39;Jaipur&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">691</span>,<span style="color:#e6db74">&#39;Delhi&#39;</span>,<span style="color:#e6db74">&#39;New Delhi Main Branch,11, Parliament Street, New Delhi – 110001&#39;</span>,<span style="color:#e6db74">&#39;New Delhi&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">718</span>,<span style="color:#e6db74">&#39;HimachalPradesh&#39;</span>,<span style="color:#e6db74">&#39;Shimla Main BranchNear Kali Bari Temple, The Mall, ShimlaHimachal Pradesh, District : ShimlaState: Himachal Pradesh, Pin : 171003&#39;</span>,<span style="color:#e6db74">&#39;Shimla&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">800</span>,<span style="color:#e6db74">&#39;Tamil Nadu and Puducherry&#39;</span>,<span style="color:#e6db74">&#39;Chennai Main Branch336/166, Thambuchetty  Street, Parrys,Chennai. State: Tamil Nadu   Pin : 600001&#39;</span>,<span style="color:#e6db74">&#39;Chennai&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">813</span>,<span style="color:#e6db74">&#39;Karnataka&#39;</span>,<span style="color:#e6db74">&#39;Bengaluru Main Branch,Post Bag No.5310,St. Marks Road, Bangalore, District : Bangalore Urban,State : Karnataka, Pin : 560001&#39;</span>,<span style="color:#e6db74">&#39;Bengaluru&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">847</span>,<span style="color:#e6db74">&#39;Telangana&#39;</span>,<span style="color:#e6db74">&#39;Hyderabad Main BranchBank Street, Koti, Hyderabad.District : Hyderabad, State: Telangana Pin: 500095&#39;</span>,<span style="color:#e6db74">&#39;Hyderabad&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">941</span>,<span style="color:#e6db74">&#39;Kerala&#39;</span>,<span style="color:#e6db74">&#39;Thiruvananthapuram BranchP.B.No.14, M.G.Road,Thiruvananthapuram, District : Trivandrum,State: Kerala. Pin : 695001&#39;</span>,<span style="color:#e6db74">&#39;Thiruvananthapuram&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">952</span>,<span style="color:#e6db74">&#39;AndhraPradesh&#39;</span>,<span style="color:#e6db74">&#39;Visakhapatnam BranchRednam Gardens, Jail Road, Junction,Opp. Pages/Vodaphone Off ,Visakhapatnam, VisakhapatnamDistrict: Visakhapatnam, State : Andhra PradeshPin : 530002&#39;</span>,<span style="color:#e6db74">&#39;Visakhapatnam&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">1308</span>,<span style="color:#e6db74">&#39;MadhyaPradesh&#39;</span>,<span style="color:#e6db74">&#39;Bhopal Main Branch,T.T.Nagar,Bhopal-462003, Bhopal,Madhya Pradesh, District : Bhopal,State: Madhya Pradesh. Pin : 462003&#39;</span>,<span style="color:#e6db74">&#39;Bhopal&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">1355</span>,<span style="color:#e6db74">&#39;Gujarat, Dadar &amp; Nagar Haveliand Daman &amp; Diu&#39;</span>,<span style="color:#e6db74">&#39;Gandhinagar Branch, I Floor,Zonal Office, Sector 10 B GandhinagarDistt: Gandhinagar, Gujarat. Pin: 382010.&#39;</span>,<span style="color:#e6db74">&#39;Gandhinagar&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">1539</span>,<span style="color:#e6db74">&#39;Mizoram&#39;</span>,<span style="color:#e6db74">&#39;Aizawl BranchSolomns caveDistrict: Aizawl. Mizoram,  Pin: 796001&#39;</span>,<span style="color:#e6db74">&#39;Aizawl&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">2295</span>,<span style="color:#e6db74">&#39;Jammu andKashmir&#39;</span>,<span style="color:#e6db74">&#39;Badami Bagh (Srinagar) BranchBadami Bagh Cantonment, Srinagar, KashmirDist : Badgam, State: Jammu &amp; KashmirPin : 190001&#39;</span>,<span style="color:#e6db74">&#39;Srinagar&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">6091</span>,<span style="color:#e6db74">&#39;ArunachalPradesh&#39;</span>,<span style="color:#e6db74">&#39;ltanagar BranchTI Marg,VIP Road Bank Tinali, ltanagar,Arunachal PradeshDistrict : PapumpareState : Arunachal Pradesh Pin : 791111&#39;</span>,<span style="color:#e6db74">&#39;Itanagar&#39;</span>);
+</span></span></code></pre></div><p>All  the other table you insert the csv files with the help of import wizard.</p>
+<blockquote>
+<p>Note the complete code for this porject is available in the following <a href="https://github.com/DADSCareerpedia/Electoral-Bond-SQL-">git repo</a> and direct database file is avalable at this <a href="https://raw.githubusercontent.com/DADSCareerpedia/Electoral-Bond-SQL-/main/electoralbonddata_database.sql">link</a></p>
+</blockquote>
+<p>In next session lets write some queries&#x1f680;.</p>
 ]]></content:encoded>
     </item>
     
     <item>
       <title>Schema</title>
-      <link>http://localhost:1313/posts/schema/</link>
+      <link>https://dadscareerpedia.github.io/posts/schema/</link>
       <pubDate>Tue, 23 Apr 2024 08:48:13 +0530</pubDate>
       
-      <guid>http://localhost:1313/posts/schema/</guid>
+      <guid>https://dadscareerpedia.github.io/posts/schema/</guid>
       <description>SQL Database from Electoral Bond Data. The above image shows you all the attributes we are taking into consideration. Lets breifly look what are the conditions 1NF, 2NF, 3NF need to satisfy.
 First Normal Form (1NF):
 Eliminate duplicate columns from the same table. Create separate tables for related data and identify each row with a unique column or set of columns (primary key). Ensure that each column stores only atomic (indivisible) values.</description>
@@ -156,10 +192,10 @@ Eliminate duplicate columns from the same table. Create separate tables for rela
     
     <item>
       <title>Electoral Bond Data - 2</title>
-      <link>http://localhost:1313/posts/keys/</link>
+      <link>https://dadscareerpedia.github.io/posts/keys/</link>
       <pubDate>Tue, 23 Apr 2024 04:41:27 +0530</pubDate>
       
-      <guid>http://localhost:1313/posts/keys/</guid>
+      <guid>https://dadscareerpedia.github.io/posts/keys/</guid>
       <description>Creating Unique Keys If you look into the data both donors table , receivers table have 3 columns in common:
 Denomination $\rightarrow$ Value of the bond Prefix $\rightarrow$ The first 2 letters of bond Bond Number $\rightarrow$ 5 digit number followed by Just like your currency your bond has a value.
 Just like your currency &amp;#x1f4b5; your bond &amp;#x1f4c4; has a unique number which is the combination of Prefix and Bond Number.</description>
@@ -252,10 +288,10 @@ Just like your currency &amp;#x1f4b5; your bond &amp;#x1f4c4; has a unique numbe
     
     <item>
       <title>Electoral Bond Data - 1</title>
-      <link>http://localhost:1313/posts/project--1/</link>
+      <link>https://dadscareerpedia.github.io/posts/project--1/</link>
       <pubDate>Mon, 22 Apr 2024 08:09:41 +0530</pubDate>
       
-      <guid>http://localhost:1313/posts/project--1/</guid>
+      <guid>https://dadscareerpedia.github.io/posts/project--1/</guid>
       <description>Domain Knowledge : Description: In a significant development affecting political transparency in India, the Supreme Court delivered a landmark judgment striking down the Electoral Bond scheme. This ruling, grounded in the principle that anonymity in political funding undermines voters&amp;rsquo; right to information, mandates transparency in political party funding sources. The decision represents a crucial step in India&amp;rsquo;s ongoing efforts to enhance transparency and accountability in political financing, aligning with democratic values and public demands for openness.</description>
       <content:encoded><![CDATA[<hr>
 <h1 id="domain-knowledge-">Domain Knowledge :</h1>

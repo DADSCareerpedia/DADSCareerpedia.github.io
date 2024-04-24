@@ -2,26 +2,624 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>My New Hugo Site</title>
-    <link>https://dadscareerpedia.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on My New Hugo Site</description>
-    <generator>Hugo -- 0.125.1</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 22 Apr 2024 08:09:41 +0530</lastBuildDate>
-    <atom:link href="https://dadscareerpedia.github.io/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Electoral Bond Data - 1</title>
-      <link>https://dadscareerpedia.github.io/posts/project--1/</link>
-      <pubDate>Mon, 22 Apr 2024 08:09:41 +0530</pubDate>
-      <guid>https://dadscareerpedia.github.io/posts/project--1/</guid>
-      <description>Domain Knowledge : Description: In a significant development affecting political transparency in India, the Supreme Court delivered a landmark judgment striking down the Electoral Bond scheme. This ruling, grounded in the principle that anonymity in political funding undermines voters&amp;rsquo; right to information, mandates transparency in political party funding sources. The decision represents a crucial step in India&amp;rsquo;s ongoing efforts to enhance transparency and accountability in political financing, aligning with democratic values and public demands for openness.</description>
-    </item>
+    <lastBuildDate>Wed, 24 Apr 2024 06:50:30 +0530</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Me</title>
-      <link>https://dadscareerpedia.github.io/posts/first/</link>
+      <link>http://localhost:1313/posts/first/</link>
       <pubDate>Mon, 22 Apr 2024 07:48:16 +0530</pubDate>
-      <guid>https://dadscareerpedia.github.io/posts/first/</guid>
+      
+      <guid>http://localhost:1313/posts/first/</guid>
       <description>About Me Hello! I&amp;rsquo;m V. M R, a passionate beginner data analyst eager to explore the world of data-driven insights and analytics. With a B.Tech in Electrical and Electronic Engineering and Minor in Physics , I am excited to leverage my skills in data manipulation, visualization, and analysis to solve real-world problems &amp;#x1f680;
 My Journey into Data Analysis My journey into data analysis began with a curiosity to uncover meaningful patterns hidden within datasets.</description>
+      <content:encoded><![CDATA[<hr>
+<h2 id="about-me">About Me</h2>
+<p>Hello! I&rsquo;m V. M R, a passionate beginner data analyst eager to explore the world of data-driven insights and analytics. With a B.Tech in Electrical and Electronic Engineering and Minor in Physics , I am excited to leverage my skills in data manipulation, visualization, and analysis to solve real-world problems &#x1f680;</p>
+<h3 id="my-journey-into-data-analysis">My Journey into Data Analysis</h3>
+<p>My journey into data analysis began with a curiosity to uncover meaningful patterns hidden within datasets. Through online courses, hands-on projects, and self-directed learning, I have developed proficiency in:</p>
+<ul>
+<li>Data cleaning and preprocessing using tools like Python and SQL</li>
+<li>Exploratory data analysis to extract insights and identify trends</li>
+<li>Creating visualizations to communicate findings effectively</li>
+<li>Basic statistical analysis and hypothesis testing</li>
+</ul>
+<h3 id="why-data-analysis">Why Data Analysis?</h3>
+<p>What fascinates me the most about data analysis is its potential to drive informed decision-making and discover actionable insights. I enjoy the challenge of transforming raw data into valuable information that can influence strategic business decisions and optimize processes.</p>
+<h3 id="my-interests">My Interests</h3>
+<p>Outside of data analysis, I have a keen interest in [mention any relevant hobbies or interests related to data, technology, or analytics]. I believe in continuous learning and am always seeking new opportunities to enhance my skills and expand my knowledge in the field of data science.</p>
+<h3 id="lets-connect">Let&rsquo;s Connect!</h3>
+<p>I am currently seeking opportunities to apply my skills and contribute to impactful projects. If you&rsquo;re looking for a motivated and dedicated data analyst, I&rsquo;d love to connect and explore potential collaborations or opportunities.</p>
+<p>Feel free to reach out to me at <a href="mailto:maniratnam@careerpedia.co">maniratnam@careerpedia.co</a> .</p>
+<hr>
+]]></content:encoded>
     </item>
+    
+    <item>
+      <title>Schema 2</title>
+      <link>http://localhost:1313/posts/schema-2/</link>
+      <pubDate>Wed, 24 Apr 2024 06:50:30 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/schema-2/</guid>
+      <description>In this section We are going to create the SQL schema and the choice of SQL I went with is mysql. You can use any SQL variant of your choice but you need to refer to the documentation to find the appropriate data types.
+Creating the database and using it an the name of database is electoralbonddata. CREATE DATABASE IF NOT EXISTS `electoralbonddata` USE `electoralbonddata`; Creating the bank data table.</description>
+      <content:encoded><![CDATA[<p><img loading="lazy" src="/img/raw_data_4.png" type="" alt=""  /></p>
+<p>In this section We are going to create the SQL schema and the choice of SQL I went with is mysql. You can use any SQL variant of your choice but you need to refer to the documentation to find the appropriate data types.</p>
+<ul>
+<li>Creating the database and using it an the name of database is <code>electoralbonddata</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span>  <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>electoralbonddata<span style="color:#f92672">`</span> 
+</span></span><span style="display:flex;"><span>USE <span style="color:#f92672">`</span>electoralbonddata<span style="color:#f92672">`</span>;
+</span></span></code></pre></div><ul>
+<li>Creating the bank data table.</li>
+</ul>
+<p><img loading="lazy" src="/img/banktable.png" type="" alt=""  /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>bankdata<span style="color:#f92672">`</span>; <span style="color:#75715e">-- just to make sure no table of that name does&#39;nt exit.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>bankdata<span style="color:#f92672">`</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>branchCodeNo<span style="color:#f92672">`</span> int <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span><span style="color:#66d9ef">STATE</span><span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>Address<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>CITY<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">30</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>branchCodeNo<span style="color:#f92672">`</span>)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><ul>
+<li>Creating the bond data table</li>
+</ul>
+<p><img loading="lazy" src="/img/bonddata.png" type="" alt=""  /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>bonddata<span style="color:#f92672">`</span>; <span style="color:#75715e">-- just to make sure no table of that name does&#39;nt exit.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>bonddata<span style="color:#f92672">`</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>Unique_key<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">8</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>Denomination<span style="color:#f92672">`</span> int <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>Unique_key<span style="color:#f92672">`</span>)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><ul>
+<li>Creating Donor data table</li>
+</ul>
+<p><img loading="lazy" src="/img/donorstable.png" type="" alt=""  /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>donordata<span style="color:#f92672">`</span>; <span style="color:#75715e">-- just to make sure no table of that name does&#39;nt exit.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>donordata<span style="color:#f92672">`</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>Urn<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">30</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>JournalDate<span style="color:#f92672">`</span> date <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>PurchaseDate<span style="color:#f92672">`</span> date <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>ExpiryDate<span style="color:#f92672">`</span> date <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>Purchaser<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>PayBranchCode<span style="color:#f92672">`</span> int <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>PayTeller<span style="color:#f92672">`</span> int <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>Unique_key<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">8</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>Unique_key<span style="color:#f92672">`</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">KEY</span> <span style="color:#f92672">`</span>PayBranchCode<span style="color:#f92672">`</span> (<span style="color:#f92672">`</span>PayBranchCode<span style="color:#f92672">`</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CONSTRAINT</span> <span style="color:#f92672">`</span>donordata_ibfk_1<span style="color:#f92672">`</span> <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>Unique_key<span style="color:#f92672">`</span>) <span style="color:#66d9ef">REFERENCES</span> <span style="color:#f92672">`</span>bonddata<span style="color:#f92672">`</span> (<span style="color:#f92672">`</span>Unique_key<span style="color:#f92672">`</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CONSTRAINT</span> <span style="color:#f92672">`</span>donordata_ibfk_2<span style="color:#f92672">`</span> <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>PayBranchCode<span style="color:#f92672">`</span>) <span style="color:#66d9ef">REFERENCES</span> <span style="color:#f92672">`</span>bankdata<span style="color:#f92672">`</span> (<span style="color:#f92672">`</span>branchCodeNo<span style="color:#f92672">`</span>)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><ul>
+<li>Creating  Receiver table</li>
+</ul>
+<p><img loading="lazy" src="/img/partytable.png" type="" alt=""  /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">IF</span> <span style="color:#66d9ef">EXISTS</span> <span style="color:#f92672">`</span>receiverdata<span style="color:#f92672">`</span>; <span style="color:#75715e">-- just to make sure no table of that name does&#39;nt exit.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">`</span>receiverdata<span style="color:#f92672">`</span> (
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>DateEncashment<span style="color:#f92672">`</span> date <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>PartyName<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">255</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>AccountNum<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>PayBranchCode<span style="color:#f92672">`</span> int <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>PayTeller<span style="color:#f92672">`</span> int <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">`</span>Unique_key<span style="color:#f92672">`</span> varchar(<span style="color:#ae81ff">8</span>) <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>Unique_key<span style="color:#f92672">`</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">KEY</span> <span style="color:#f92672">`</span>PayBranchCode<span style="color:#f92672">`</span> (<span style="color:#f92672">`</span>PayBranchCode<span style="color:#f92672">`</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CONSTRAINT</span> <span style="color:#f92672">`</span>reciverdata_ibfk_1<span style="color:#f92672">`</span> <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>Unique_key<span style="color:#f92672">`</span>) <span style="color:#66d9ef">REFERENCES</span> <span style="color:#f92672">`</span>bonddata<span style="color:#f92672">`</span> (<span style="color:#f92672">`</span>Unique_key<span style="color:#f92672">`</span>),
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">CONSTRAINT</span> <span style="color:#f92672">`</span>reciverdata_ibfk_2<span style="color:#f92672">`</span> <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#f92672">`</span>PayBranchCode<span style="color:#f92672">`</span>) <span style="color:#66d9ef">REFERENCES</span> <span style="color:#f92672">`</span>bankdata<span style="color:#f92672">`</span> (<span style="color:#f92672">`</span>branchCodeNo<span style="color:#f92672">`</span>)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>So this is how we create the table and the final schema is going to look like this &#x1f447;</p>
+<p><img loading="lazy" src="/img/Final_Schema.png" type="" alt=""  /></p>
+<p>We can import the csv files into each table using import wizard. All the tabels can be exported with this method except for bank data table because it has commas in the data leading to conflicts in CSV file export, So for this one you can directly write insert statement as there are total 29 entries or You can directly send the data frames to the tables using mysql connector and sqlalchemy library.</p>
+<p>Here I am sharing the code for inserting the values in bankdata table.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> <span style="color:#f92672">`</span>bankdata<span style="color:#f92672">`</span> <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">1</span>,<span style="color:#e6db74">&#39;West Bengal and Andaman&amp; Nicobar&#39;</span>,<span style="color:#e6db74">&#39;Kolkata Main Branch,Samriddhi Bhawan1, Strand Road, Kolkata, West Bengal,District :Kolkata. State: West Bengal.Pin : 700001&#39;</span>,<span style="color:#e6db74">&#39;Kolkata&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">2</span>,<span style="color:#e6db74">&#39;Tripura&#39;</span>,<span style="color:#e6db74">&#39;Agartala BranchHari Ganga Basak Road,Agartala, District: Tripura (W), Tripura, Pin: 799001&#39;</span>,<span style="color:#e6db74">&#39;Agartala&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">41</span>,<span style="color:#e6db74">&#39;Odisha&#39;</span>,<span style="color:#e6db74">&#39;Bhubaneswar Main BranchP.B.No.14, BhubaneswarBhubaneswar, Orissa. District : KhurdaState: Odisha, Pin : 751001&#39;</span>,<span style="color:#e6db74">&#39;Bhubaneswar&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">78</span>,<span style="color:#e6db74">&#39;Assam&#39;</span>,<span style="color:#e6db74">&#39;Guwahati Branch,Pan Bazar,MG Road, Kamrup, Guwahati.  Pin: 781001&#39;</span>,<span style="color:#e6db74">&#39;Guwahati&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">92</span>,<span style="color:#e6db74">&#39;Manipur&#39;</span>,<span style="color:#e6db74">&#39;lmphal BranchM G Avenue, lmphal west, Manipur, Pin: 795001&#39;</span>,<span style="color:#e6db74">&#39;Imphal&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">125</span>,<span style="color:#e6db74">&#39;Uttar Pradesh&#39;</span>,<span style="color:#e6db74">&#39;Lucknow Main Branch,Tarawali Kothi, Motimahal Marg,Hazratganj, Lucknow, Uttar PradeshDistrict : Lucknow, State: Uttar PradeshPin:  226001&#39;</span>,<span style="color:#e6db74">&#39;Lucknow&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">152</span>,<span style="color:#e6db74">&#39;Bihar&#39;</span>,<span style="color:#e6db74">&#39;Patna Main BranchWest Gandhi Maidhan, Patna, Bihar.Pin: 800001&#39;</span>,<span style="color:#e6db74">&#39;Patna&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">167</span>,<span style="color:#e6db74">&#39;Jharkhand&#39;</span>,<span style="color:#e6db74">&#39;Ranchi BranchCourt Compound, RanchiJharkhand, District : Ranchi,State: Jharkhand, Pin : 834001&#39;</span>,<span style="color:#e6db74">&#39;Ranchi&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">181</span>,<span style="color:#e6db74">&#39;Meghalaya&#39;</span>,<span style="color:#e6db74">&#39;Shillong BranchMG road, Near General PO Shillong,District: Khasi Hills (E), Meghalaya, Pin: 793001&#39;</span>,<span style="color:#e6db74">&#39;Shilong&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">214</span>,<span style="color:#e6db74">&#39;Nagaland&#39;</span>,<span style="color:#e6db74">&#39;Kohima BranchNear deputy commissioner officeKohima, Nagaland, Pin: 797001&#39;</span>,<span style="color:#e6db74">&#39;Kohima&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">232</span>,<span style="color:#e6db74">&#39;Sikkim&#39;</span>,<span style="color:#e6db74">&#39;Gangtok BranchM G Marg, Gangtok SIKKIMDist: East Sikkim, State : Sikkim Pin : 737101&#39;</span>,<span style="color:#e6db74">&#39;Gangtok&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">300</span>,<span style="color:#e6db74">&#39;Maharashtra&#39;</span>,<span style="color:#e6db74">&#39;Mumbai Main Branch,Mumbai Samachar MargHorniman Circle, Fort, Mumbai,Maharashtra   Pin : 400001&#39;</span>,<span style="color:#e6db74">&#39;Mumbai&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">461</span>,<span style="color:#e6db74">&#39;Chhattisgarh&#39;</span>,<span style="color:#e6db74">&#39;Raipur Main BranchP.B.N0.29/61, Jaistambh Chowk, Raipur,District : Raipur, State : Chhatisgarh, Pin: 492001&#39;</span>,<span style="color:#e6db74">&#39;Raipur&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">509</span>,<span style="color:#e6db74">&#39;Goa, Lakshadweep&#39;</span>,<span style="color:#e6db74">&#39;Panaji BranchOpp : Hotel Mandovi, Dayanand,Dayanand Bandodkar Marg,Panaji, Goa . District : North Goa, State : Goa,Pin: 403001&#39;</span>,<span style="color:#e6db74">&#39;Panaji&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">628</span>,<span style="color:#e6db74">&#39;Haryana, Punjab and Chandigarh&#39;</span>,<span style="color:#e6db74">&#39;Chandigarh Main Branch,SCO 43-48, Banking Square,Sector-17B, Chandigarh, State: Chandigarh,Pin : 160017&#39;</span>,<span style="color:#e6db74">&#39;Chandigarh&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">630</span>,<span style="color:#e6db74">&#39;Uttarakhand&#39;</span>,<span style="color:#e6db74">&#39;Dehra Dun Main Branch4, Convent Road, DehradunUttarakhand , State: Uttarakhand Pin : 248001&#39;</span>,<span style="color:#e6db74">&#39;Dehradun&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">656</span>,<span style="color:#e6db74">&#39;Rajasthan&#39;</span>,<span style="color:#e6db74">&#39;Jaipur Main Branch, P.B.No.72,Sanganeri Gate, Jaipur, RajasthanDistrict :Jaipur, State: Rajasthan,  Pin : 302003&#39;</span>,<span style="color:#e6db74">&#39;Jaipur&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">691</span>,<span style="color:#e6db74">&#39;Delhi&#39;</span>,<span style="color:#e6db74">&#39;New Delhi Main Branch,11, Parliament Street, New Delhi – 110001&#39;</span>,<span style="color:#e6db74">&#39;New Delhi&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">718</span>,<span style="color:#e6db74">&#39;HimachalPradesh&#39;</span>,<span style="color:#e6db74">&#39;Shimla Main BranchNear Kali Bari Temple, The Mall, ShimlaHimachal Pradesh, District : ShimlaState: Himachal Pradesh, Pin : 171003&#39;</span>,<span style="color:#e6db74">&#39;Shimla&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">800</span>,<span style="color:#e6db74">&#39;Tamil Nadu and Puducherry&#39;</span>,<span style="color:#e6db74">&#39;Chennai Main Branch336/166, Thambuchetty  Street, Parrys,Chennai. State: Tamil Nadu   Pin : 600001&#39;</span>,<span style="color:#e6db74">&#39;Chennai&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">813</span>,<span style="color:#e6db74">&#39;Karnataka&#39;</span>,<span style="color:#e6db74">&#39;Bengaluru Main Branch,Post Bag No.5310,St. Marks Road, Bangalore, District : Bangalore Urban,State : Karnataka, Pin : 560001&#39;</span>,<span style="color:#e6db74">&#39;Bengaluru&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">847</span>,<span style="color:#e6db74">&#39;Telangana&#39;</span>,<span style="color:#e6db74">&#39;Hyderabad Main BranchBank Street, Koti, Hyderabad.District : Hyderabad, State: Telangana Pin: 500095&#39;</span>,<span style="color:#e6db74">&#39;Hyderabad&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">941</span>,<span style="color:#e6db74">&#39;Kerala&#39;</span>,<span style="color:#e6db74">&#39;Thiruvananthapuram BranchP.B.No.14, M.G.Road,Thiruvananthapuram, District : Trivandrum,State: Kerala. Pin : 695001&#39;</span>,<span style="color:#e6db74">&#39;Thiruvananthapuram&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">952</span>,<span style="color:#e6db74">&#39;AndhraPradesh&#39;</span>,<span style="color:#e6db74">&#39;Visakhapatnam BranchRednam Gardens, Jail Road, Junction,Opp. Pages/Vodaphone Off ,Visakhapatnam, VisakhapatnamDistrict: Visakhapatnam, State : Andhra PradeshPin : 530002&#39;</span>,<span style="color:#e6db74">&#39;Visakhapatnam&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">1308</span>,<span style="color:#e6db74">&#39;MadhyaPradesh&#39;</span>,<span style="color:#e6db74">&#39;Bhopal Main Branch,T.T.Nagar,Bhopal-462003, Bhopal,Madhya Pradesh, District : Bhopal,State: Madhya Pradesh. Pin : 462003&#39;</span>,<span style="color:#e6db74">&#39;Bhopal&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">1355</span>,<span style="color:#e6db74">&#39;Gujarat, Dadar &amp; Nagar Haveliand Daman &amp; Diu&#39;</span>,<span style="color:#e6db74">&#39;Gandhinagar Branch, I Floor,Zonal Office, Sector 10 B GandhinagarDistt: Gandhinagar, Gujarat. Pin: 382010.&#39;</span>,<span style="color:#e6db74">&#39;Gandhinagar&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">1539</span>,<span style="color:#e6db74">&#39;Mizoram&#39;</span>,<span style="color:#e6db74">&#39;Aizawl BranchSolomns caveDistrict: Aizawl. Mizoram,  Pin: 796001&#39;</span>,<span style="color:#e6db74">&#39;Aizawl&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">2295</span>,<span style="color:#e6db74">&#39;Jammu andKashmir&#39;</span>,<span style="color:#e6db74">&#39;Badami Bagh (Srinagar) BranchBadami Bagh Cantonment, Srinagar, KashmirDist : Badgam, State: Jammu &amp; KashmirPin : 190001&#39;</span>,<span style="color:#e6db74">&#39;Srinagar&#39;</span>),
+</span></span><span style="display:flex;"><span>(<span style="color:#ae81ff">6091</span>,<span style="color:#e6db74">&#39;ArunachalPradesh&#39;</span>,<span style="color:#e6db74">&#39;ltanagar BranchTI Marg,VIP Road Bank Tinali, ltanagar,Arunachal PradeshDistrict : PapumpareState : Arunachal Pradesh Pin : 791111&#39;</span>,<span style="color:#e6db74">&#39;Itanagar&#39;</span>);
+</span></span></code></pre></div><p>All  the other table you insert the csv files with the help of import wizard.</p>
+<blockquote>
+<p>Note the complete code for this porject is available in the following <a href="https://github.com/DADSCareerpedia/Electoral-Bond-SQL-">git repo</a> and direct database file is avalable at this <a href="https://raw.githubusercontent.com/DADSCareerpedia/Electoral-Bond-SQL-/main/electoralbonddata_database.sql">link</a></p>
+</blockquote>
+<p>In next session lets write some queries&#x1f680;.</p>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Schema</title>
+      <link>http://localhost:1313/posts/schema/</link>
+      <pubDate>Tue, 23 Apr 2024 08:48:13 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/schema/</guid>
+      <description>SQL Database from Electoral Bond Data. The above image shows you all the attributes we are taking into consideration. Lets breifly look what are the conditions 1NF, 2NF, 3NF need to satisfy.
+First Normal Form (1NF):
+Eliminate duplicate columns from the same table. Create separate tables for related data and identify each row with a unique column or set of columns (primary key). Ensure that each column stores only atomic (indivisible) values.</description>
+      <content:encoded><![CDATA[<h1 id="sql-database-from-electoral-bond-data">SQL Database from Electoral Bond Data.</h1>
+<p><img loading="lazy" src="/img/raw_data.png" type="" alt=""  /></p>
+<p>The above image shows you all the attributes we are taking into consideration. Lets breifly look what are the conditions <strong>1NF, 2NF, 3NF</strong> need to satisfy.</p>
+<p><strong>First Normal Form (1NF):</strong></p>
+<ul>
+<li>Eliminate duplicate columns from the same table.</li>
+<li>Create separate tables for related data and identify each row with a unique column or set of columns (primary key).</li>
+<li>Ensure that each column stores only atomic (indivisible) values.</li>
+</ul>
+<p><strong>Second Normal Form (2NF):</strong></p>
+<ul>
+<li>Satisfy 1NF criteria.</li>
+<li>Remove partial dependencies by separating out subsets of data that apply to multiple rows.</li>
+<li>All non-key attributes must be fully dependent on the primary key.</li>
+</ul>
+<p><strong>Third Normal Form (3NF):</strong></p>
+<ul>
+<li>Satisfy 2NF criteria.</li>
+<li>Eliminate transitive dependencies by removing columns that are not dependent on the primary key directly.</li>
+<li>Every non-key attribute must be dependent only on the primary key and not on other non-key attributes.</li>
+</ul>
+<p>These conditions help ensure that a database schema is well-structured and avoids common pitfalls like redundancy, partial dependencies, and transitive dependencies. Each normal form builds upon the previous one, aiming to achieve a higher level of data integrity and normalization.</p>
+<p><img loading="lazy" src="/img/raw_data_2.png" type="" alt=""  /></p>
+<p>If you look the above data you can see that we have Unique_key (Primary Key) and Serial Numbers are unecessary so we are removing it and we can derive the <code>Prefix</code> and <code>BondNumber</code> from the <code>Unique_key</code> columns. So these columns are removed. So all the red colored columns are removed from the data.</p>
+<p>Now lets look into our Bankdata.</p>
+<p><img loading="lazy" src="/img/bankdata.png" type="" alt=""  /></p>
+<p>Even here we had SlNo (Serial Number) column and we can remove it its not needed and we can identitfy the records in this table with <code>Branch Code No</code></p>
+<p>Hurray &#x1f603; we have removed data redundant columns. But if you notice there is denominaton colum common in both donors and receivers table.</p>
+<p><img loading="lazy" src="/img/raw_data_3.png" type="" alt=""  /></p>
+<p>For same <code>Unique_key</code> value we should have same <code>Denomination</code> value. Its like there is a 20Rs &#x1f4b5; Note with unique serial number and I gave it to a shop keeper now the unique serial number and its values are not going to change so based on the serial number once a denomination is associated with it then all the tabels it should have the same.</p>
+<p>Now lets say in the donors table there is an error in denomination then i need to change it in two tables and simultaneously I need to make sure that for same  <code>Unique_key</code> value we have same <code>Denomniation</code> value in both the tables all the time. To achive this we are going to remove the Denomination column from both the tables and create a seperate table  with <code>Unique_key</code> and <code>Denominaitons</code> named as bonddata.</p>
+<p><img loading="lazy" src="/img/raw_data_4.png" type="" alt=""  /></p>
+<p>Now lets look into the code for creating the new bonddata table.</p>
+<blockquote>
+<p>Note the complete code for this porject is available in the following <a href="https://github.com/DADSCareerpedia/Electoral-Bond-SQL-">git repo</a></p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>alldata_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>merge(donors_df,reciver_df,how<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;outer&#39;</span>,on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Unique_key&#39;</span>)
+</span></span><span style="display:flex;"><span>alldata_df<span style="color:#f92672">.</span>head()
+</span></span></code></pre></div><p>we have applied an outer join on both the receivers table and donors table.</p>
+<h5 id="why-outer-join">Why outer join?</h5>
+<p>There can be bonds that are bought but not donated and bonds recived but without donors and if you look into the count of records in the donors and receivers table you can get to this conclusion easily as there are 18871 records in donors table and 20471 records in receivers table.</p>
+<p>once the join is made let us extract only the columns we are interested.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>bonddata_df <span style="color:#f92672">=</span> alldata_df[[<span style="color:#e6db74">&#39;Unique_key&#39;</span>,<span style="color:#e6db74">&#39;Denominations_x&#39;</span>,<span style="color:#e6db74">&#39;Denominations_y&#39;</span>]] 
+</span></span><span style="display:flex;"><span>bonddata_df
+</span></span></code></pre></div><p>you have 2 denominations colums one is from donors table and the other is from receivers table.</p>
+<p>Now lets merge the colums based on the missing values.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>bonddata_df[<span style="color:#e6db74">&#39;Denomination&#39;</span>] <span style="color:#f92672">=</span> bonddata_df[<span style="color:#e6db74">&#39;Denominations_x&#39;</span>]<span style="color:#f92672">.</span>fillna(bonddata_df[<span style="color:#e6db74">&#39;Denominations_y&#39;</span>])
+</span></span><span style="display:flex;"><span>bonddata_df <span style="color:#f92672">=</span> bonddata_df[[<span style="color:#e6db74">&#39;Unique_key&#39;</span>,<span style="color:#e6db74">&#39;Denomination&#39;</span>]]
+</span></span></code></pre></div><p>with these steps we get bonddata table and we can export this to file format of our choice.</p>
+<p>We are going to use these 4 tables in our final data model in SQL:</p>
+<ol>
+<li>bond data</li>
+<li>bank data</li>
+<li>donor data</li>
+<li>receiver data</li>
+</ol>
+<hr>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Electoral Bond Data - 2</title>
+      <link>http://localhost:1313/posts/keys/</link>
+      <pubDate>Tue, 23 Apr 2024 04:41:27 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/keys/</guid>
+      <description>Creating Unique Keys If you look into the data both donors table , receivers table have 3 columns in common:
+Denomination $\rightarrow$ Value of the bond Prefix $\rightarrow$ The first 2 letters of bond Bond Number $\rightarrow$ 5 digit number followed by Just like your currency your bond has a value.
+Just like your currency &amp;#x1f4b5; your bond &amp;#x1f4c4; has a unique number which is the combination of Prefix and Bond Number.</description>
+      <content:encoded><![CDATA[<h1 id="creating-unique-keys">Creating Unique Keys</h1>
+<p>If you look into the data both donors table , receivers table have 3 columns in common:</p>
+<ol>
+<li>Denomination $\rightarrow$ Value of the bond</li>
+<li>Prefix $\rightarrow$ The first 2 letters of bond</li>
+<li>Bond Number $\rightarrow$ 5 digit number followed by</li>
+</ol>
+<p>Just like your currency your bond has a value.</p>
+<p><img loading="lazy" src="/img/note.jpg" type="" alt=""  /></p>
+<p>Just like your currency &#x1f4b5; your bond &#x1f4c4; has a unique number which is the combination of Prefix and Bond Number.</p>
+<p><img loading="lazy" src="/img/idea.png" type="" alt=""  /></p>
+<p>If you take these attributes individually then multiple bonds can have same prefix and multiple bonds can have same bond number just like your currency but the combination makes sure they are unique like no currency has the same sequence number and this is going to act as our primary key and simultaneouly the attribute with which we can find out which bond is delivered to which political party and who gave it.</p>
+<h3 id="creating-the-unique_key">Creating the Unique_key:</h3>
+<p>We have imported the data into a jupyter notebook and converted each attribute to their appropriate data type. We took the two columns <code>Prefix</code> and <code>BondNumber</code> together and created a new column <code>Unique_key</code> this is going to act as the common connection between Donors Table and Receivers Table and we need to do this step for both donors and receivers data.</p>
+<blockquote>
+<p>Below is the code snippet and the complete code is available in the following <a href="https://github.com/DADSCareerpedia/Electoral-Bond-SQL-">git repo</a></p>
+</blockquote>
+<ul>
+<li>Donor Data</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>donors_df[<span style="color:#e6db74">&#39;Unique_key&#39;</span>] <span style="color:#f92672">=</span> donors_df[<span style="color:#e6db74">&#34;Prefix&#34;</span>]<span style="color:#f92672">.</span>astype(str) <span style="color:#f92672">+</span> donors_df[<span style="color:#e6db74">&#34;BondNumber&#34;</span>]<span style="color:#f92672">.</span>astype(str)
+</span></span><span style="display:flex;"><span>donors_df<span style="color:#f92672">.</span>head()
+</span></span></code></pre></div><ul>
+<li>Receiver Data</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-py" data-lang="py"><span style="display:flex;"><span>reciver_df[<span style="color:#e6db74">&#39;Unique_key&#39;</span>] <span style="color:#f92672">=</span> reciver_df[<span style="color:#e6db74">&#39;Prefix&#39;</span>]<span style="color:#f92672">.</span>astype(str) <span style="color:#f92672">+</span> reciver_df[<span style="color:#e6db74">&#39;BondNumber&#39;</span>]<span style="color:#f92672">.</span>astype(str)
+</span></span><span style="display:flex;"><span>reciver_df<span style="color:#f92672">.</span>head()
+</span></span></code></pre></div><p>Now that we have created the column we can export the output to file format of our choice depending on what you want to accomplish.</p>
+<h3 id="lets-understand-the-cardinality-between-donors-and-receivers">Lets Understand the cardinality between donors and receivers.</h3>
+<p>Bank &#x1f3e6; creates a bond which has a Prefix and BondNumber whose combination is unique and a Denomination(Value) associated with it. Now this bond is bought by a Donor which is donated to a political party a bond cannot be broken into parts so it can be donated to one party so the relation between a bond in donors table and recivers table is <strong>One-to-One</strong>.</p>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 360 25"
+      >
+      <g transform='translate(8,16)'>
+<path d='M 96,0 L 104,0' fill='none' stroke='currentColor'></path>
+<path d='M 208,0 L 224,0' fill='none' stroke='currentColor'></path>
+<polygon points='232.000000,0.000000 220.000000,-5.600000 220.000000,5.600000' fill='currentColor' transform='rotate(0.000000, 224.000000, 0.000000)'></polygon>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>D</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>T</text>
+<text text-anchor='middle' x='56' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='64' y='4' fill='currentColor' style='font-size:1em'>b</text>
+<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='80' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='120' y='4' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='136' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='152' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='160' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='176' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='192' y='4' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='240' y='4' fill='currentColor' style='font-size:1em'>R</text>
+<text text-anchor='middle' x='248' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='256' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='264' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='272' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='280' y='4' fill='currentColor' style='font-size:1em'>v</text>
+<text text-anchor='middle' x='288' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='296' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='312' y='4' fill='currentColor' style='font-size:1em'>T</text>
+<text text-anchor='middle' x='320' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='328' y='4' fill='currentColor' style='font-size:1em'>b</text>
+<text text-anchor='middle' x='336' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='344' y='4' fill='currentColor' style='font-size:1em'>e</text>
+</g>
+
+    </svg>
+  
+</div>
+<p>Later in our analysis we are going to use different joins to get insight into our data so understanding cardinality will give us an advantage.</p>
+<p>Now that we have created our Unique key we can use this and create SQL data base so in the next session we are going to look into how to create a Normalized data base.</p>
+<blockquote>
+<p>Note: Python is our preffered language of choice but above steps can be accomplished with any language or tool of your choice and you and acomplish above steps even with excel.</p>
+</blockquote>
+]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Electoral Bond Data - 1</title>
+      <link>http://localhost:1313/posts/project--1/</link>
+      <pubDate>Mon, 22 Apr 2024 08:09:41 +0530</pubDate>
+      
+      <guid>http://localhost:1313/posts/project--1/</guid>
+      <description>Domain Knowledge : Description: In a significant development affecting political transparency in India, the Supreme Court delivered a landmark judgment striking down the Electoral Bond scheme. This ruling, grounded in the principle that anonymity in political funding undermines voters&amp;rsquo; right to information, mandates transparency in political party funding sources. The decision represents a crucial step in India&amp;rsquo;s ongoing efforts to enhance transparency and accountability in political financing, aligning with democratic values and public demands for openness.</description>
+      <content:encoded><![CDATA[<hr>
+<h1 id="domain-knowledge-">Domain Knowledge :</h1>
+<p><img loading="lazy" src="/img/domain.png" type="" alt=""  /></p>
+<p><strong>Description:</strong>  </p>
+<p>In a significant development affecting political transparency in India, the Supreme Court delivered a landmark judgment striking down the Electoral Bond scheme. This ruling, grounded in the principle that anonymity in political funding undermines voters&rsquo; right to information, mandates transparency in political party funding sources. The decision represents a crucial step in India&rsquo;s ongoing efforts to enhance transparency and accountability in political financing, aligning with democratic values and public demands for openness.</p>
+<p>In response to this judgment, the Election Commission of India (ECI), under the Supreme Court&rsquo;s directive, released comprehensive data on March 21, 2024, through the State Bank of India (SBI). This dataset, available on the ECI&rsquo;s official website, encompasses information on donors and recipients from April 12, 2019, to January 11, 2024, including bond numbers for matching purchasers and recipients of the bonds. To further enrich the analysis of political funding in India, this dataset is being supplemented with additional data from the Enforcement Directorate.</p>
+<p>The Election Commission published two separate lists of donors and recipients on its website after receiving details from the State Bank of India in accordance with a Supreme Court order.</p>
+<p>On March 21, the Election Commission made public a new dataset of electoral bonds, including their alphanumeric numbers that can facilitate matching purchasers with the political parties that received the funds.</p>
+<hr>
+<h2 id="data-sources">Data Sources</h2>
+<p>These are the official Sites where the data is released by the government.</p>
+<p><a href="https://www.eci.gov.in/disclosure-of-electoral-bonds">https://www.eci.gov.in/disclosure-of-electoral-bonds</a></p>
+<p><a href="https://enforcementdirectorate.gov.in/press-release">https://enforcementdirectorate.gov.in/press-release</a> ( Data available only since 2021 )</p>
+<p><a href="https://cag.gov.in/en/audit-report">https://cag.gov.in/en/audit-report</a> ( Data extracted from 2018 )</p>
+<p><a href="https://incometaxindia.gov.in/Pages/press-releases.aspx">https://incometaxindia.gov.in/Pages/press-releases.aspx</a> ( Data extracted from 2010 )</p>
+<p><a href="https://cbi.gov.in/press-releases">https://cbi.gov.in/press-releases</a> ( Data extracted from 2018 )</p>
+<p><a href="https://www.mca.gov.in/content/mca/global/en/mca/master-data/MDS.html">https://www.mca.gov.in/content/mca/global/en/mca/master-data/MDS.html</a>  </p>
+<p>The Bank codes details have been extracted from this website:</p>
+<blockquote>
+<p>All the bank banches don&rsquo;t have the authority to issue electoral bonds only few branches of SBI bank can issue them and this table contains the details of that banks and based on the branch code we can connect to the receiver and donor data.</p>
+</blockquote>
+<ul>
+<li><a href="https://pib.gov.in/Pressreleaseshare.aspx?PRID=1566604">pib.gov</a></li>
+</ul>
+<blockquote>
+<p>Note: We obtained the dataset from Kaggle, which is available in comma-separated format (CSV). Unlike the sources above mentioned that provide data in PDF format but they are the official sites and even the data from Kaggle is just format converted, CSV is more accessible for analysis and processing.</p>
+</blockquote>
+<p><strong>Kaggle Sources</strong> :</p>
+<p><a href="https://www.kaggle.com/datasets/uplytics/electoral-bonds-india-complete-2024-dataset/data">https://www.kaggle.com/datasets/uplytics/electoral-bonds-india-complete-2024-dataset/data</a></p>
+<hr>
+<h2 id="data-dictionary">Data Dictionary</h2>
+<h3 id="data-tables-our-data-has-3-table">Data Tables: Our Data has 3 Table</h3>
+<table>
+<thead>
+<tr>
+<th>NO</th>
+<th>Table Name</th>
+<th>Table Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Donor Data</td>
+<td>This table has details about Company/Organization/Individuals and bonds they bought.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Receiver Data</td>
+<td>This table has details about Political Parties and the bonds they received.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Bank Data</td>
+<td>This table has the details about the bank branches where bonds can be issued or enchased.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="donor-data-">Donor Data :</h3>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Column Name</th>
+<th>Elaborated Column Name</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>SNo</td>
+<td>Serial number.</td>
+<td>A sequential number assigned to each record in the dataset to uniquely identify and order individual entries.</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Urn</td>
+<td>Unique reference number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>JournalDate</td>
+<td>Date of journal entry</td>
+<td>The date when the purchaser has requested for an electoral</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>PurchaseDate</td>
+<td>Date of bond purchase</td>
+<td>The date when the purchaser has got for an electoral</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>ExpiryDate</td>
+<td>Expiry date of the bond</td>
+<td>The date when the bond gets expired after that data the bond cannot be encashed</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>Purchaser</td>
+<td>Name of the purchaser</td>
+<td>The Name of organization/Company/Individuals who bought the bond.</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Prefix</td>
+<td>Prefix code associated with the bond</td>
+<td>Each Bond has a Prefix just like a currency</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>BondNumber</td>
+<td>A Number Followed By Prefix Code</td>
+<td>Each Bond has a number just like a currency</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>Denominations</td>
+<td>Value of the bond</td>
+<td>The value of each Bond and total 5 different values are possible : [1K, 10K, 1lac, 10lac, 1Cr ]</td>
+<td></td>
+</tr>
+<tr>
+<td>10</td>
+<td>PayBranchCode</td>
+<td>Payment Branch code</td>
+<td>It is the branch code (IFSC Code) of the bank branch where  the bond is issued.</td>
+<td></td>
+</tr>
+<tr>
+<td>11</td>
+<td>PayTeller</td>
+<td>Teller ID</td>
+<td>It is the employee id who issued the bond.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="recipient-data-">Recipient Data :</h3>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Column Name</th>
+<th>Elaborated Column Name</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>SNo</td>
+<td>Serial number.</td>
+<td>A sequential number assigned to each record in the dataset to uniquely identify and order individual entries.</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>DateEncashment</td>
+<td>Date of bond encashment</td>
+<td>The date when the bond has been enchased by a political party.</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>PartyName</td>
+<td>Name of the political party (recipient).</td>
+<td>The Political Party that enchashed the bond.</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>AccountNum</td>
+<td>Account number of the party</td>
+<td>The column displays the account number of the encashed party, where the last four digits are visible, and the preceding digits are obscured with asterisks (*) to ensure privacy.</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Prefix</td>
+<td>Prefix code associated with the bond.</td>
+<td>Each Bond has a Prefix just like a currency.</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>BondNumber</td>
+<td>A Number Followed By Prefix Code</td>
+<td>Each Bond has a number just like a currency</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Denominations</td>
+<td>Value of the bond</td>
+<td>The value of each Bond and total 5 different values are possible : [1K, 10K, 1lac, 10lac, 1Cr ]</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>PayBranchCode</td>
+<td>Payment Branch code</td>
+<td>It is the branch code (IFSC Code) of the bank branch where  the bond is encashed.</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>PayTeller</td>
+<td>Teller ID</td>
+<td>It is the employee id who encashed the bond.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="bank-branch-data">Bank Branch Data:</h3>
+<p>Only few SBI branches are authorized to issue and enchase  Electoral bond  and this table has the details of those branches.</p>
+<table>
+<thead>
+<tr>
+<th>No</th>
+<th>Column Name</th>
+<th>Elaborated Column Name</th>
+<th>Description</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Sl.No.</td>
+<td>Serial number.</td>
+<td>A sequential number assigned to each record in the dataset to uniquely identify and order individual entries.</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>State/UT</td>
+<td>State/UT</td>
+<td>State where the bank is assigned</td>
+<td></td>
+</tr>
+<tr>
+<td>3</td>
+<td>Name of the Branch &amp; Address</td>
+<td>Name of the Branch &amp; Address</td>
+<td>This is the complete address of the bank</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>City</td>
+<td>City</td>
+<td>City where the bank brank is located</td>
+<td></td>
+</tr>
+<tr>
+<td>5</td>
+<td>Branch Code No</td>
+<td>IFSC Code</td>
+<td>IFCS Code is the Unique code that is assigned for every branch and based on the ID we can identify any bank branch</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="domain-knowledge">Domain Knowledge</h3>
+<p>Before we start Analyzing the data we need to have an understanding of our problem statement which is referred as domain knowledge and below section is a little effort to impart that knowledge.</p>
+<p>Each bond is characterized by a prefix and a bond number. While these components individually lack uniqueness, together they form a distinct identification ID. By comparing and matching these unique codes across tables, we can discern the relationship between donors and receivers, thereby identifying the source of monetary donations to specific political parties.</p>
+<p>In donor table and receivers table we have a branch code where one is the bond issuing branch code and the other is  the branch where the bond is enchased respectively by joining that table with bank branch data we can understand how money is flowing from city to city.</p>
+<p>Every bond has 14 days of validation before it gets expired so if the bond is not enchased by any political party them the amount will be transferred to prime minister fund.</p>
+<p>The data released by the government is not complete as the records count in receivers table and that of the donors table is not same and those consideration are taken into our analysis work.</p>
+<p>Certain companies have acquired bonds under slightly varied names, prompting us to analyze and correct these discrepancies with a degree of due diligence. These adjustments can be referenced in the data cleaning section of the code.</p>
+<hr>
+<h3 id="next-article-">Next Article :</h3>
+<ul>
+<li>In the Next Article We will look into Data Cleaning we are going to preform.</li>
+</ul>
+<hr>
+<pre><code>                                                                               -- by 
+                                                                                  V. M R 
+</code></pre>
+<hr>
+<hr>
+]]></content:encoded>
+    </item>
+    
   </channel>
 </rss>

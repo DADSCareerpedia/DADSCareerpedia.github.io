@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>My New Hugo Site</title>
-    <link>https://dadscareerpedia.github.io/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Apr 2024 06:50:30 +0530</lastBuildDate><atom:link href="https://dadscareerpedia.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Apr 2024 06:50:30 +0530</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Me</title>
-      <link>https://dadscareerpedia.github.io/posts/first/</link>
+      <link>http://localhost:1313/posts/first/</link>
       <pubDate>Mon, 22 Apr 2024 07:48:16 +0530</pubDate>
       
-      <guid>https://dadscareerpedia.github.io/posts/first/</guid>
+      <guid>http://localhost:1313/posts/first/</guid>
       <description>About Me Hello! I&amp;rsquo;m V. M R, a passionate beginner data analyst eager to explore the world of data-driven insights and analytics. With a B.Tech in Electrical and Electronic Engineering and Minor in Physics , I am excited to leverage my skills in data manipulation, visualization, and analysis to solve real-world problems &amp;#x1f680;
 My Journey into Data Analysis My journey into data analysis began with a curiosity to uncover meaningful patterns hidden within datasets.</description>
       <content:encoded><![CDATA[<hr>
@@ -39,10 +39,10 @@ My Journey into Data Analysis My journey into data analysis began with a curiosi
     
     <item>
       <title>Schema 2</title>
-      <link>https://dadscareerpedia.github.io/posts/schema-2/</link>
+      <link>http://localhost:1313/posts/schema-2/</link>
       <pubDate>Wed, 24 Apr 2024 06:50:30 +0530</pubDate>
       
-      <guid>https://dadscareerpedia.github.io/posts/schema-2/</guid>
+      <guid>http://localhost:1313/posts/schema-2/</guid>
       <description>In this section We are going to create the SQL schema and the choice of SQL I went with is mysql. You can use any SQL variant of your choice but you need to refer to the documentation to find the appropriate data types.
 Creating the database and using it an the name of database is electoralbonddata. CREATE DATABASE IF NOT EXISTS `electoralbonddata` USE `electoralbonddata`; Creating the bank data table.</description>
       <content:encoded><![CDATA[<p><img loading="lazy" src="/img/raw_data_4.png" type="" alt=""  /></p>
@@ -153,10 +153,10 @@ Creating the database and using it an the name of database is electoralbonddata.
     
     <item>
       <title>Schema</title>
-      <link>https://dadscareerpedia.github.io/posts/schema/</link>
+      <link>http://localhost:1313/posts/schema/</link>
       <pubDate>Tue, 23 Apr 2024 08:48:13 +0530</pubDate>
       
-      <guid>https://dadscareerpedia.github.io/posts/schema/</guid>
+      <guid>http://localhost:1313/posts/schema/</guid>
       <description>SQL Database from Electoral Bond Data. The above image shows you all the attributes we are taking into consideration. Lets breifly look what are the conditions 1NF, 2NF, 3NF need to satisfy.
 First Normal Form (1NF):
 Eliminate duplicate columns from the same table. Create separate tables for related data and identify each row with a unique column or set of columns (primary key). Ensure that each column stores only atomic (indivisible) values.</description>
@@ -222,10 +222,10 @@ Eliminate duplicate columns from the same table. Create separate tables for rela
     
     <item>
       <title>Electoral Bond Data - 2</title>
-      <link>https://dadscareerpedia.github.io/posts/keys/</link>
+      <link>http://localhost:1313/posts/keys/</link>
       <pubDate>Tue, 23 Apr 2024 04:41:27 +0530</pubDate>
       
-      <guid>https://dadscareerpedia.github.io/posts/keys/</guid>
+      <guid>http://localhost:1313/posts/keys/</guid>
       <description>Creating Unique Keys If you look into the data both donors table , receivers table have 3 columns in common:
 Denomination $\rightarrow$ Value of the bond Prefix $\rightarrow$ The first 2 letters of bond Bond Number $\rightarrow$ 5 digit number followed by Just like your currency your bond has a value.
 Just like your currency &amp;#x1f4b5; your bond &amp;#x1f4c4; has a unique number which is the combination of Prefix and Bond Number.</description>
@@ -270,10 +270,10 @@ Just like your currency &amp;#x1f4b5; your bond &amp;#x1f4c4; has a unique numbe
     
     <item>
       <title>Electoral Bond Data - 1</title>
-      <link>https://dadscareerpedia.github.io/posts/project--1/</link>
+      <link>http://localhost:1313/posts/project--1/</link>
       <pubDate>Mon, 22 Apr 2024 08:09:41 +0530</pubDate>
       
-      <guid>https://dadscareerpedia.github.io/posts/project--1/</guid>
+      <guid>http://localhost:1313/posts/project--1/</guid>
       <description>Domain Knowledge : Description: In a significant development affecting political transparency in India, the Supreme Court delivered a landmark judgment striking down the Electoral Bond scheme. This ruling, grounded in the principle that anonymity in political funding undermines voters&amp;rsquo; right to information, mandates transparency in political party funding sources. The decision represents a crucial step in India&amp;rsquo;s ongoing efforts to enhance transparency and accountability in political financing, aligning with democratic values and public demands for openness.</description>
       <content:encoded><![CDATA[<hr>
 <h1 id="domain-knowledge-">Domain Knowledge :</h1>

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>http://localhost:1313/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>V. M R Data Science Blog.</title>
+    <link>https://dadscareerpedia.github.io/</link>
+    <description>Recent content on V. M R Data Science Blog.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Apr 2024 06:50:30 +0530</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 29 Apr 2024 18:11:49 +0530</lastBuildDate><atom:link href="https://dadscareerpedia.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Me</title>
-      <link>http://localhost:1313/posts/first/</link>
+      <link>https://dadscareerpedia.github.io/posts/first/</link>
       <pubDate>Mon, 22 Apr 2024 07:48:16 +0530</pubDate>
       
-      <guid>http://localhost:1313/posts/first/</guid>
+      <guid>https://dadscareerpedia.github.io/posts/first/</guid>
       <description>About Me Hello! I&amp;rsquo;m V. M R, a passionate beginner data analyst eager to explore the world of data-driven insights and analytics. With a B.Tech in Electrical and Electronic Engineering and Minor in Physics , I am excited to leverage my skills in data manipulation, visualization, and analysis to solve real-world problems &amp;#x1f680;
 My Journey into Data Analysis My journey into data analysis began with a curiosity to uncover meaningful patterns hidden within datasets.</description>
       <content:encoded><![CDATA[<hr>
@@ -38,11 +38,509 @@ My Journey into Data Analysis My journey into data analysis began with a curiosi
     </item>
     
     <item>
+      <title>Queries</title>
+      <link>https://dadscareerpedia.github.io/posts/queries/</link>
+      <pubDate>Mon, 29 Apr 2024 18:11:49 +0530</pubDate>
+      
+      <guid>https://dadscareerpedia.github.io/posts/queries/</guid>
+      <description>Queries on the database: We have successfully created a database with electoral bond data we have total 4 tables and by looking the ER diagram you can see the relations between them
+There is a relation between donordata table and bonddata table with unique_key as the common column. There is a relation between reciverdata table and bonddata table with unique_key as the common column. There is a relation between donordata table and bankdata table with paybranchcode and branchcode acting as the common column.</description>
+      <content:encoded><![CDATA[<h3 id="queries-on-the-database">Queries on the database:</h3>
+<p><img loading="lazy" src="/img/Final_Schema.png" type="" alt=""  /></p>
+<p>We have successfully created a database with electoral bond data we have total 4 tables and by looking the ER diagram you can see the relations between them</p>
+<ul>
+<li>There is a relation between <code>donordata</code> table and <code>bonddata</code> table with <code>unique_key</code> as the common column.</li>
+<li>There is a relation between <code>reciverdata</code> table and <code>bonddata</code> table with <code>unique_key</code> as the common column.</li>
+<li>There is a relation between <code>donordata</code> table and <code>bankdata</code> table with <code>paybranchcode</code> and <code>branchcode</code> acting as the common column.</li>
+<li>There is a relation between <code>receiverdata</code> table and <code>bankdata</code> table with <code>paybranchcode</code> and <code>branchcode</code> acting as the common column.</li>
+</ul>
+<hr>
+<h4 id="some-queries-to-have-a-peek-into-the-data">Some Queries to have a peek into the data.</h4>
+<p>Total  Tables in the database:</p>
+<p>The data base has 4 tables : <code>SHOW TABLES</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-------------------------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> Tables_in_electoralbonddata   <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-------------------------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> bankdata                      <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> bonddata                      <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> donordata                     <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> receiverdata                  <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-------------------------------+
+</span></span></span></code></pre></div><hr>
+<h4 id="bonddata">Bonddata</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DESCRIBE</span> bonddata;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">--------------+------------+------+-----+---------+-------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> Field        <span style="color:#f92672">|</span> <span style="color:#66d9ef">Type</span>       <span style="color:#f92672">|</span> <span style="color:#66d9ef">Null</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Key</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Default</span> <span style="color:#f92672">|</span> Extra <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">--------------+------------+------+-----+---------+-------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> Unique_key   <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">8</span>) <span style="color:#f92672">|</span> <span style="color:#66d9ef">NO</span>   <span style="color:#f92672">|</span> PRI <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> Denomination <span style="color:#f92672">|</span> int        <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">--------------+------------+------+-----+---------+-------+
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">&gt;</span>   <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> bonddata
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">------------+--------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> Unique_key <span style="color:#f92672">|</span> Denomination <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">------------+--------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> OC10000    <span style="color:#f92672">|</span>     <span style="color:#ae81ff">10000000</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> OC10001    <span style="color:#f92672">|</span>     <span style="color:#ae81ff">10000000</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> OC10002    <span style="color:#f92672">|</span>     <span style="color:#ae81ff">10000000</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> OC10003    <span style="color:#f92672">|</span>     <span style="color:#ae81ff">10000000</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> OC10004    <span style="color:#f92672">|</span>     <span style="color:#ae81ff">10000000</span> <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">------------+--------------+
+</span></span></span></code></pre></div><hr>
+<h4 id="bankdata">Bankdata</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DESCRIBE</span> bankdata;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">--------------+--------------+------+-----+---------+-------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> Field        <span style="color:#f92672">|</span> <span style="color:#66d9ef">Type</span>         <span style="color:#f92672">|</span> <span style="color:#66d9ef">Null</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Key</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Default</span> <span style="color:#f92672">|</span> Extra <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">--------------+--------------+------+-----+---------+-------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> branchCodeNo <span style="color:#f92672">|</span> int          <span style="color:#f92672">|</span> <span style="color:#66d9ef">NO</span>   <span style="color:#f92672">|</span> PRI <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#66d9ef">STATE</span>        <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">50</span>)  <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> Address      <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">255</span>) <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> CITY         <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">30</span>)  <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">--------------+--------------+------+-----+---------+-------+
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">&gt;</span>   <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> bankdata
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">--------------+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> branchCodeNo <span style="color:#f92672">|</span> <span style="color:#66d9ef">STATE</span>                            <span style="color:#f92672">|</span> Address                                                                                                                     <span style="color:#f92672">|</span> CITY        <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">--------------+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span>            <span style="color:#ae81ff">1</span> <span style="color:#f92672">|</span> West Bengal <span style="color:#66d9ef">and</span> Andaman<span style="color:#f92672">&amp;</span> Nicobar <span style="color:#f92672">|</span> Kolkata Main Branch,Samriddhi Bhawan1, Strand Road, Kolkata, West Bengal,District :Kolkata. <span style="color:#66d9ef">State</span>: West Bengal.Pin : <span style="color:#ae81ff">700001</span> <span style="color:#f92672">|</span> Kolkata     <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>            <span style="color:#ae81ff">2</span> <span style="color:#f92672">|</span> Tripura                          <span style="color:#f92672">|</span> Agartala BranchHari Ganga Basak Road,Agartala, District: Tripura (W), Tripura, Pin: <span style="color:#ae81ff">799001</span>                                  <span style="color:#f92672">|</span> Agartala    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>           <span style="color:#ae81ff">41</span> <span style="color:#f92672">|</span> Odisha                           <span style="color:#f92672">|</span> Bhubaneswar Main BranchP.B.<span style="color:#66d9ef">No</span>.<span style="color:#ae81ff">14</span>, BhubaneswarBhubaneswar, Orissa. District : KhurdaState: Odisha, Pin : <span style="color:#ae81ff">751001</span>              <span style="color:#f92672">|</span> Bhubaneswar <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>           <span style="color:#ae81ff">78</span> <span style="color:#f92672">|</span> Assam                            <span style="color:#f92672">|</span> Guwahati Branch,Pan Bazar,MG Road, Kamrup, Guwahati.  Pin: <span style="color:#ae81ff">781001</span>                                                           <span style="color:#f92672">|</span> Guwahati    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span>           <span style="color:#ae81ff">92</span> <span style="color:#f92672">|</span> Manipur                          <span style="color:#f92672">|</span> lmphal BranchM <span style="color:#66d9ef">G</span> Avenue, lmphal west, Manipur, Pin: <span style="color:#ae81ff">795001</span>                                                                  <span style="color:#f92672">|</span> Imphal      <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">--------------+----------------------------------+-----------------------------------------------------------------------------------------------------------------------------+-------------+
+</span></span></span></code></pre></div><hr>
+<h4 id="donordata">DonorData</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DESCRIBE</span> donordata;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">---------------+--------------+------+-----+---------+-------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> Field         <span style="color:#f92672">|</span> <span style="color:#66d9ef">Type</span>         <span style="color:#f92672">|</span> <span style="color:#66d9ef">Null</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Key</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Default</span> <span style="color:#f92672">|</span> Extra <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">---------------+--------------+------+-----+---------+-------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> Urn           <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">30</span>)  <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> JournalDate   <span style="color:#f92672">|</span> date         <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> PurchaseDate  <span style="color:#f92672">|</span> date         <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> ExpiryDate    <span style="color:#f92672">|</span> date         <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> Purchaser     <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">255</span>) <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> PayBranchCode <span style="color:#f92672">|</span> int          <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span> MUL <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> PayTeller     <span style="color:#f92672">|</span> int          <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> Unique_key    <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">8</span>)   <span style="color:#f92672">|</span> <span style="color:#66d9ef">NO</span>   <span style="color:#f92672">|</span> PRI <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">---------------+--------------+------+-----+---------+-------+
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">&gt;</span>   <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> donordata
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-------------------------+-------------+--------------+------------+-----------------------------------+---------------+-----------+------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> Urn                     <span style="color:#f92672">|</span> JournalDate <span style="color:#f92672">|</span> PurchaseDate <span style="color:#f92672">|</span> ExpiryDate <span style="color:#f92672">|</span> Purchaser                         <span style="color:#f92672">|</span> PayBranchCode <span style="color:#f92672">|</span> PayTeller <span style="color:#f92672">|</span> Unique_key <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-------------------------+-------------+--------------+------------+-----------------------------------+---------------+-----------+------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> <span style="color:#ae81ff">00847202204080000002387</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">2022</span><span style="color:#f92672">-</span><span style="color:#ae81ff">04</span><span style="color:#f92672">-</span><span style="color:#ae81ff">08</span>  <span style="color:#f92672">|</span> <span style="color:#ae81ff">2022</span><span style="color:#f92672">-</span><span style="color:#ae81ff">04</span><span style="color:#f92672">-</span><span style="color:#ae81ff">08</span>   <span style="color:#f92672">|</span> <span style="color:#ae81ff">2022</span><span style="color:#f92672">-</span><span style="color:#ae81ff">04</span><span style="color:#f92672">-</span><span style="color:#ae81ff">22</span> <span style="color:#f92672">|</span> KOYA <span style="color:#66d9ef">AND</span> COMPANY CONSTRUCTION LTD <span style="color:#f92672">|</span>           <span style="color:#ae81ff">847</span> <span style="color:#f92672">|</span>   <span style="color:#ae81ff">3898296</span> <span style="color:#f92672">|</span> OC10000    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">00300202110070000001967</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">07</span>  <span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">07</span>   <span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">21</span> <span style="color:#f92672">|</span> K RAHEJA CORP PVT LTD             <span style="color:#f92672">|</span>           <span style="color:#ae81ff">300</span> <span style="color:#f92672">|</span>   <span style="color:#ae81ff">7905165</span> <span style="color:#f92672">|</span> OC10001    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">00300202110070000001984</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">07</span>  <span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">07</span>   <span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">21</span> <span style="color:#f92672">|</span> CAPSTAN TRADING LLP               <span style="color:#f92672">|</span>           <span style="color:#ae81ff">300</span> <span style="color:#f92672">|</span>   <span style="color:#ae81ff">7905165</span> <span style="color:#f92672">|</span> OC10002    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">00300202110070000001967</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">07</span>  <span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">07</span>   <span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">21</span> <span style="color:#f92672">|</span> K RAHEJA CORP PVT LTD             <span style="color:#f92672">|</span>           <span style="color:#ae81ff">300</span> <span style="color:#f92672">|</span>   <span style="color:#ae81ff">7905165</span> <span style="color:#f92672">|</span> OC10003    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">00300202110070000001984</span> <span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">07</span>  <span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">07</span>   <span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">21</span> <span style="color:#f92672">|</span> CAPSTAN TRADING LLP               <span style="color:#f92672">|</span>           <span style="color:#ae81ff">300</span> <span style="color:#f92672">|</span>   <span style="color:#ae81ff">7905165</span> <span style="color:#f92672">|</span> OC10004    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">-------------------------+-------------+--------------+------------+-----------------------------------+---------------+-----------+------------+
+</span></span></span></code></pre></div><hr>
+<h4 id="receiverdata">Receiverdata</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">DESCRIBE</span> receiverdata;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">----------------+--------------+------+-----+---------+-------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> Field          <span style="color:#f92672">|</span> <span style="color:#66d9ef">Type</span>         <span style="color:#f92672">|</span> <span style="color:#66d9ef">Null</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Key</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">Default</span> <span style="color:#f92672">|</span> Extra <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">----------------+--------------+------+-----+---------+-------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> DateEncashment <span style="color:#f92672">|</span> date         <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> PartyName      <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">255</span>) <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> AccountNum     <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">50</span>)  <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> PayBranchCode  <span style="color:#f92672">|</span> int          <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span> MUL <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> PayTeller      <span style="color:#f92672">|</span> int          <span style="color:#f92672">|</span> YES  <span style="color:#f92672">|</span>     <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> Unique_key     <span style="color:#f92672">|</span> varchar(<span style="color:#ae81ff">8</span>)   <span style="color:#f92672">|</span> <span style="color:#66d9ef">NO</span>   <span style="color:#f92672">|</span> PRI <span style="color:#f92672">|</span> <span style="color:#66d9ef">NULL</span>    <span style="color:#f92672">|</span>       <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">----------------+--------------+------+-----+---------+-------+
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">&gt;</span>   <span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> receiverdata
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">----------------+------------------------+-------------+---------------+-----------+------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> DateEncashment <span style="color:#f92672">|</span> PartyName              <span style="color:#f92672">|</span> AccountNum  <span style="color:#f92672">|</span> PayBranchCode <span style="color:#f92672">|</span> PayTeller <span style="color:#f92672">|</span> Unique_key <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">----------------+------------------------+-------------+---------------+-----------+------------+
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#f92672">|</span> <span style="color:#ae81ff">2022</span><span style="color:#f92672">-</span><span style="color:#ae81ff">04</span><span style="color:#f92672">-</span><span style="color:#ae81ff">12</span>     <span style="color:#f92672">|</span> BHARAT RASHTRA SAMITHI <span style="color:#f92672">|</span> <span style="color:#f92672">*******</span><span style="color:#ae81ff">7477</span> <span style="color:#f92672">|</span>           <span style="color:#ae81ff">847</span> <span style="color:#f92672">|</span>   <span style="color:#ae81ff">3898296</span> <span style="color:#f92672">|</span> OC10000    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">08</span>     <span style="color:#f92672">|</span> BHARAT RASHTRA SAMITHI <span style="color:#f92672">|</span> <span style="color:#f92672">*******</span><span style="color:#ae81ff">7477</span> <span style="color:#f92672">|</span>           <span style="color:#ae81ff">847</span> <span style="color:#f92672">|</span>   <span style="color:#ae81ff">6417329</span> <span style="color:#f92672">|</span> OC10001    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">08</span>     <span style="color:#f92672">|</span> BHARAT RASHTRA SAMITHI <span style="color:#f92672">|</span> <span style="color:#f92672">*******</span><span style="color:#ae81ff">7477</span> <span style="color:#f92672">|</span>           <span style="color:#ae81ff">847</span> <span style="color:#f92672">|</span>   <span style="color:#ae81ff">6417329</span> <span style="color:#f92672">|</span> OC10002    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">08</span>     <span style="color:#f92672">|</span> BHARAT RASHTRA SAMITHI <span style="color:#f92672">|</span> <span style="color:#f92672">*******</span><span style="color:#ae81ff">7477</span> <span style="color:#f92672">|</span>           <span style="color:#ae81ff">847</span> <span style="color:#f92672">|</span>   <span style="color:#ae81ff">6417329</span> <span style="color:#f92672">|</span> OC10003    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> <span style="color:#ae81ff">2021</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#f92672">-</span><span style="color:#ae81ff">08</span>     <span style="color:#f92672">|</span> BHARAT RASHTRA SAMITHI <span style="color:#f92672">|</span> <span style="color:#f92672">*******</span><span style="color:#ae81ff">7477</span> <span style="color:#f92672">|</span>           <span style="color:#ae81ff">847</span> <span style="color:#f92672">|</span>   <span style="color:#ae81ff">6417329</span> <span style="color:#f92672">|</span> OC10004    <span style="color:#f92672">|</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+</span><span style="color:#75715e">----------------+------------------------+-------------+---------------+-----------+------------+
+</span></span></span></code></pre></div><hr>
+<p>So the above section gives you how many tables that are there in the data base and their description and 5 records to have and understanding of the table.</p>
+<hr>
+<h2 id="some-more-queries">Some more Queries</h2>
+<p>&ndash; 1. Find out how much donors spent on bonds ?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">SUM</span>(Denomination) <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;Total Amount bought&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> donordata d  
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">on</span> d.Unique_key <span style="color:#f92672">=</span> b.Unique_key;
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+---------------------+
+| Total Amount bought |
++---------------------+
+|        121555132000 |
++---------------------+
+</code></pre><p>&ndash; 2. Find out total fund politicians got ?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">SUM</span>(Denomination) <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;Total Recived Amount&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> receiverdata r 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">on</span> r.Unique_key <span style="color:#f92672">=</span> b.Unique_key;
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+----------------------+
+| Total Recived Amount |
++----------------------+
+|         127690893000 |
++----------------------+
+</code></pre><p>&ndash; 3. Find out the total amount of unaccounted money recived by parties (Money without donors) ?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">SUM</span>(Denomination) <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;Unaccounted Amount&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> donordata d 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">RIGHT</span> <span style="color:#66d9ef">JOIN</span> receiverdata r <span style="color:#66d9ef">ON</span> r.Unique_key <span style="color:#f92672">=</span> d.Unique_key
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> r.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> purchaser <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">NULL</span>; 
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+--------------------+
+| Unaccounted Amount |
++--------------------+
+|         6232110000 |
++--------------------+
+</code></pre><p>&ndash; 4. Find year wise how much money is spent on bonds ?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">YEAR</span>(d.PurchaseDate) <span style="color:#66d9ef">AS</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">year</span><span style="color:#f92672">`</span>,<span style="color:#66d9ef">SUM</span>(Denomination) <span style="color:#66d9ef">AS</span> <span style="color:#e6db74">&#39;year wise bond spending&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> donordata d
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> b.unique_key <span style="color:#f92672">=</span> d.unique_key
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">year</span><span style="color:#f92672">`</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">year</span> wise bond spending<span style="color:#f92672">`</span> <span style="color:#66d9ef">DESC</span>;
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+------+-------------------------+
+| year | year wise bond spending |
++------+-------------------------+
+| 2023 |             42464745000 |
+| 2022 |             37048576000 |
+| 2019 |             17661280000 |
+| 2021 |             15022927000 |
+| 2024 |              5718003000 |
+| 2020 |              3639601000 |
++------+-------------------------+
+</code></pre><p>&ndash; 5. In which month most amount is spent on bonds ?</p>
+<p>&ndash; Output gives you a month number</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> city_bond_spending_cte <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MONTH</span>(d.PurchaseDate) <span style="color:#66d9ef">AS</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">Month</span><span style="color:#f92672">`</span>, <span style="color:#66d9ef">SUM</span>(b.Denomination) <span style="color:#66d9ef">AS</span> <span style="color:#e6db74">&#39;city_bond_spending&#39;</span>   
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> donordata d
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> b.unique_key <span style="color:#f92672">=</span> d.unique_key
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">Month</span><span style="color:#f92672">`</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> city_bond_spending_cte
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> city_bond_spending <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MAX</span>(city_bond_spending)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> city_bond_spending_cte
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+-------+--------------------+
+| Month | city_bond_spending |
++-------+--------------------+
+|     4 |        29808873000 |
++-------+--------------------+
+</code></pre><p>Allow me to clarify the query I&rsquo;ve written: It&rsquo;s straightforward. I&rsquo;ve established a Common Table Expression (CTE) containing a query that provides information about bonds spending in each month. This query is then referenced, enabling us to identify the month with the highest spending. Below is the query for monthly spending.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MONTH</span>(d.PurchaseDate) <span style="color:#66d9ef">AS</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">Month</span><span style="color:#f92672">`</span>, <span style="color:#66d9ef">SUM</span>(b.Denomination) <span style="color:#66d9ef">AS</span> <span style="color:#e6db74">&#39;city_bond_spending&#39;</span>   
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> donordata d
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> b.unique_key <span style="color:#f92672">=</span> d.unique_key
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">Month</span><span style="color:#f92672">`</span>
+</span></span></code></pre></div><p>and the output is :</p>
+<blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+-------+--------------------+
+| Month | city_bond_spending |
++-------+--------------------+
+|     4 |        29808873000 |
+|    10 |        28221903000 |
+|     1 |        22175930000 |
+|     7 |        13981937000 |
+|    12 |         2321000000 |
+|    11 |        16822910000 |
+|     5 |         8222579000 |
++-------+--------------------+
+</code></pre><p>This is the same main query the only difference is instead of month number it gives you month name.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">WITH</span> city_bond_spending_cte <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> MONTHNAME(d.PurchaseDate) <span style="color:#66d9ef">AS</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">Month</span><span style="color:#f92672">`</span>, <span style="color:#66d9ef">SUM</span>(b.Denomination) <span style="color:#66d9ef">AS</span> <span style="color:#e6db74">&#39;city_bond_spending&#39;</span>  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> donordata d
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> b.unique_key <span style="color:#f92672">=</span> d.unique_key
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">Month</span><span style="color:#f92672">`</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> city_bond_spending_cte
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> city_bond_spending <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MAX</span>(city_bond_spending)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> city_bond_spending_cte
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+-------+--------------------+
+| Month | city_bond_spending |
++-------+--------------------+
+| April |        29808873000 |
++-------+--------------------+
+</code></pre><p>We can write the same above query using subqueries(Derived tables):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MONTH</span>(d.PurchaseDate) <span style="color:#66d9ef">AS</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">Month</span><span style="color:#f92672">`</span>, <span style="color:#66d9ef">SUM</span>(b.Denomination) <span style="color:#66d9ef">AS</span> <span style="color:#e6db74">&#39;city_bond_spending&#39;</span>   
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> donordata d
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> b.unique_key <span style="color:#f92672">=</span> d.unique_key
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">Month</span><span style="color:#f92672">`</span>
+</span></span><span style="display:flex;"><span>) <span style="color:#66d9ef">AS</span> city_bond_spending_subquery
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> city_bond_spending <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MAX</span>(city_bond_spending)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> (
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MONTH</span>(d.PurchaseDate) <span style="color:#66d9ef">AS</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">Month</span><span style="color:#f92672">`</span>, <span style="color:#66d9ef">SUM</span>(b.Denomination) <span style="color:#66d9ef">AS</span> <span style="color:#e6db74">&#39;city_bond_spending&#39;</span>   
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">FROM</span> donordata d
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> b.unique_key <span style="color:#f92672">=</span> d.unique_key
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#f92672">`</span><span style="color:#66d9ef">Month</span><span style="color:#f92672">`</span>
+</span></span><span style="display:flex;"><span>    ) <span style="color:#66d9ef">AS</span> inner_subquery
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>Wow, that seems complex! In the query, we&rsquo;re using the same calculation both in the FROM and WHERE clauses, which can be quite intricate. However, with Common Table Expressions (CTEs), the results are stored temporarily, making the query more efficient. This is why CTEs are often favored over subqueries and its easily readable.</p>
+<blockquote>
+<p>great can you tweak the above queries and find the best month where we had the least amount of bond sales give a try .</p>
+</blockquote>
+<p>&ndash; 6. Find out which company bought the highest number of bonds. ?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span> <span style="color:#66d9ef">WITH</span> SpendingCounts <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> purchaser, <span style="color:#66d9ef">COUNT</span>(d.unique_key) <span style="color:#66d9ef">AS</span> company_bondcount
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> donordata d 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> d.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> purchaser
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> purchaser, company_bondcount <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;Max bond bought&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> company_bondcount <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MAX</span>(company_bondcount) 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+--------------------------------------------------+-----------------+
+| purchaser                                        | Max bond bought |
++--------------------------------------------------+-----------------+
+| FUTURE GAMING AND HOTEL SERVICES PRIVATE LIMITED |            1368 |
++--------------------------------------------------+-----------------+
+</code></pre><p>&ndash; 7. Find out which company spent the most on electoral bonds.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span> <span style="color:#66d9ef">WITH</span> SpendingCounts <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> purchaser, <span style="color:#66d9ef">SUM</span>(Denomination) <span style="color:#66d9ef">as</span> spending_count
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> donordata d 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> d.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> purchaser
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> purchaser, spending_count <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;Company Spending&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> spending_count <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MAX</span>(spending_count) 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+--------------------------------------------------+------------------+
+| purchaser                                        | Company Spending |
++--------------------------------------------------+------------------+
+| FUTURE GAMING AND HOTEL SERVICES PRIVATE LIMITED |      13680000000 |
++--------------------------------------------------+------------------+
+</code></pre><p>Can you see the difference in 6th question and 7th question aren&rsquo;t they same. No they are not same one can buy a lot of 1000 rupee bonds but one can by only few 1 crore bonds and valuation wise   1 crore bonds are high count wise 1000 rupee bonds are high</p>
+<p>&ndash; 8. List companies which paid the least to political parties.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span> <span style="color:#66d9ef">WITH</span> SpendingCounts <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> purchaser, <span style="color:#66d9ef">SUM</span>(Denomination) <span style="color:#66d9ef">as</span> spending_count
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> donordata d 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> d.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> purchaser
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> purchaser, spending_count <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;Company Spending&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> spending_count <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MIN</span>(spending_count) 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+--------------------------------+------------------+
+| purchaser                      | Company Spending |
++--------------------------------+------------------+
+| ARAVIND S                      |             1000 |
+| PAWAN AGARWAL                  |             1000 |
+| DAMINI NATH                    |             1000 |
+| ANKUR SINGHAL S O SH ANIL SIN  |             1000 |
+| MR. SAMEER BHATIA              |             1000 |
+| KUNAL GUPTA                    |             1000 |
+| POONAM AGARWAL                 |             1000 |
+| PUNIT DEVENDRABHAI BHANDERI    |             1000 |
+| ADWITA FINVEST PRIVATE LIMITED |             1000 |
+| N RAMAMOORTHY                  |             1000 |
++--------------------------------+------------------+
+</code></pre><p>&ndash; 9. Which political party received the highest cash?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span> <span style="color:#66d9ef">WITH</span> SpendingCounts <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> partyname, <span style="color:#66d9ef">SUM</span>(Denomination) <span style="color:#66d9ef">as</span> Encashment
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> receiverdata r  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> r.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> partyname
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> partyname, Encashment <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;Fund Received&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> Encashment <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MAX</span>(Encashment) 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+------------------------+---------------+
+| partyname              | Fund Received |
++------------------------+---------------+
+| BHARATIYA JANATA PARTY |   60605111000 |
++------------------------+---------------+
+</code></pre><p>&ndash; 10. Which political party received the highest number of electoral bonds?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span> <span style="color:#66d9ef">WITH</span> SpendingCounts <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> partyname, <span style="color:#66d9ef">COUNT</span>(Denomination) <span style="color:#66d9ef">as</span> Encashment_count
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> receiverdata r  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> r.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> partyname
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> partyname, Encashment_count <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;Company Spending&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> Encashment_count <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MAX</span>(Encashment_count) 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+------------------------+------------------+
+| partyname              | Company Spending |
++------------------------+------------------+
+| BHARATIYA JANATA PARTY |             8633 |
++------------------------+------------------+
+</code></pre><p>&ndash; 11. Which political party received the least cash?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span> <span style="color:#66d9ef">WITH</span> SpendingCounts <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> partyname, <span style="color:#66d9ef">SUM</span>(Denomination) <span style="color:#66d9ef">as</span> Encashment
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> receiverdata r  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> r.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> partyname
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> partyname, Encashment <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;Fund Received&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> Encashment <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MIN</span>(Encashment) 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+-------------------+---------------+
+| partyname         | Fund Received |
++-------------------+---------------+
+| GOA FORWARD PARTY |       3500000 |
++-------------------+---------------+
+</code></pre><p>&ndash; 12. Which political party received the least number of electoral bonds?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span> <span style="color:#66d9ef">WITH</span> SpendingCounts <span style="color:#66d9ef">AS</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> partyname, <span style="color:#66d9ef">COUNT</span>(Denomination) <span style="color:#66d9ef">as</span> Encashment_count
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> receiverdata r  
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> r.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> partyname
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> partyname, Encashment_count <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;Company Spending&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> Encashment_count <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">MIN</span>(Encashment_count) 
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">FROM</span> SpendingCounts
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+---------------------------------------+------------------+
+| partyname                             | Company Spending |
++---------------------------------------+------------------+
+| JAMMU AND KASHMIR NATIONAL CONFERENCE |                5 |
++---------------------------------------+------------------+
+</code></pre><p>&ndash; 13. Find the 2nd higest donor in terms of amount he paid?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> purchaser, <span style="color:#66d9ef">SUM</span>(Denomination) <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;purchaser total donation&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> donordata d
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> d.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> purchaser 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">HAVING</span> <span style="color:#f92672">`</span>purchaser total donation<span style="color:#f92672">`</span> <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>                                        <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span>(<span style="color:#66d9ef">SUM</span>(Denomination)) <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;purchaser total donation&#39;</span>
+</span></span><span style="display:flex;"><span>                                        <span style="color:#66d9ef">FROM</span> donordata d
+</span></span><span style="display:flex;"><span>                                        <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> d.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span>                                        <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> purchaser
+</span></span><span style="display:flex;"><span>                                        <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#f92672">`</span>purchaser total donation<span style="color:#f92672">`</span> <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span>                                        <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                                        <span style="color:#66d9ef">OFFSET</span> <span style="color:#ae81ff">1</span>) ;
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+-----------------------------------------------+--------------------------+
+| purchaser                                     | purchaser total donation |
++-----------------------------------------------+--------------------------+
+| MEGHA ENGINEERING AND INFRASTRUCTURES LIMITED |               9660000000 |
++-----------------------------------------------+--------------------------+
+</code></pre><p>&ndash; 14. Find the party which received the second highest donations?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> PartyName, <span style="color:#66d9ef">SUM</span>(Denomination) <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;party received&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> receiverdata r
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> r.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> PartyName 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">HAVING</span> <span style="color:#f92672">`</span>party received<span style="color:#f92672">`</span> <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span>(<span style="color:#66d9ef">SUM</span>(Denomination)) <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;party received&#39;</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">FROM</span> receiverdata r
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> r.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> PartyName
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#f92672">`</span>party received<span style="color:#f92672">`</span> <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">OFFSET</span> <span style="color:#ae81ff">1</span>) ;
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+------------------------------+----------------+
+| PartyName                    | party received |
++------------------------------+----------------+
+| ALL INDIA TRINAMOOL CONGRESS |    16095314000 |
++------------------------------+----------------+
+</code></pre><p>Oh I have not seen coming I thought that some other Delhi based party would have been in the second place but a party from West Bengal has the second highest amount in electoral bonds encashment</p>
+<p>&ndash; 15. Find the party which received the second highest number of bonds?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> PartyName, <span style="color:#66d9ef">COUNT</span>(r.Unique_key) <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;party received&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> receiverdata r
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> r.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> PartyName
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">HAVING</span> <span style="color:#f92672">`</span>party received<span style="color:#f92672">`</span> <span style="color:#f92672">=</span> (
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span>(<span style="color:#66d9ef">COUNT</span>(r.Unique_key)) <span style="color:#66d9ef">as</span> <span style="color:#e6db74">&#39;party received&#39;</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">FROM</span> receiverdata r
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">JOIN</span> bonddata b <span style="color:#66d9ef">ON</span> r.Unique_key <span style="color:#f92672">=</span> b.Unique_key
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> PartyName
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#f92672">`</span>party received<span style="color:#f92672">`</span> <span style="color:#66d9ef">DESC</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">LIMIT</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>                            <span style="color:#66d9ef">OFFSET</span> <span style="color:#ae81ff">1</span>);
+</span></span></code></pre></div><blockquote>
+<p>Output:</p>
+</blockquote>
+<pre tabindex="0"><code class="language-output" data-lang="output">+------------------------------+----------------+
+| PartyName                    | party received |
++------------------------------+----------------+
+| ALL INDIA TRINAMOOL CONGRESS |           3305 |
++------------------------------+----------------+
+</code></pre><p>Oh even count wise TMC(All India Trinamool Congress) is in 2nd Place.</p>
+<hr>
+<p>Like this we have tried to answer close to 50 questions including the above 15 you can refer to those queries in this <a href="https://github.com/DADSCareerpedia/Electoral-Bond-SQL-">git repo</a>. Apart from that you can try to answer a lot more question your curiosity is the only limit.</p>
+<hr>
+]]></content:encoded>
+    </item>
+    
+    <item>
       <title>Schema 2</title>
-      <link>http://localhost:1313/posts/schema-2/</link>
+      <link>https://dadscareerpedia.github.io/posts/schema-2/</link>
       <pubDate>Wed, 24 Apr 2024 06:50:30 +0530</pubDate>
       
-      <guid>http://localhost:1313/posts/schema-2/</guid>
+      <guid>https://dadscareerpedia.github.io/posts/schema-2/</guid>
       <description>In this section We are going to create the SQL schema and the choice of SQL I went with is mysql. You can use any SQL variant of your choice but you need to refer to the documentation to find the appropriate data types.
 Creating the database and using it an the name of database is electoralbonddata. CREATE DATABASE IF NOT EXISTS `electoralbonddata` USE `electoralbonddata`; Creating the bank data table.</description>
       <content:encoded><![CDATA[<p><img loading="lazy" src="/img/raw_data_4.png" type="" alt=""  /></p>
@@ -153,10 +651,10 @@ Creating the database and using it an the name of database is electoralbonddata.
     
     <item>
       <title>Schema</title>
-      <link>http://localhost:1313/posts/schema/</link>
+      <link>https://dadscareerpedia.github.io/posts/schema/</link>
       <pubDate>Tue, 23 Apr 2024 08:48:13 +0530</pubDate>
       
-      <guid>http://localhost:1313/posts/schema/</guid>
+      <guid>https://dadscareerpedia.github.io/posts/schema/</guid>
       <description>SQL Database from Electoral Bond Data. The above image shows you all the attributes we are taking into consideration. Lets breifly look what are the conditions 1NF, 2NF, 3NF need to satisfy.
 First Normal Form (1NF):
 Eliminate duplicate columns from the same table. Create separate tables for related data and identify each row with a unique column or set of columns (primary key). Ensure that each column stores only atomic (indivisible) values.</description>
@@ -222,10 +720,10 @@ Eliminate duplicate columns from the same table. Create separate tables for rela
     
     <item>
       <title>Electoral Bond Data - 2</title>
-      <link>http://localhost:1313/posts/keys/</link>
+      <link>https://dadscareerpedia.github.io/posts/keys/</link>
       <pubDate>Tue, 23 Apr 2024 04:41:27 +0530</pubDate>
       
-      <guid>http://localhost:1313/posts/keys/</guid>
+      <guid>https://dadscareerpedia.github.io/posts/keys/</guid>
       <description>Creating Unique Keys If you look into the data both donors table , receivers table have 3 columns in common:
 Denomination $\rightarrow$ Value of the bond Prefix $\rightarrow$ The first 2 letters of bond Bond Number $\rightarrow$ 5 digit number followed by Just like your currency your bond has a value.
 Just like your currency &amp;#x1f4b5; your bond &amp;#x1f4c4; has a unique number which is the combination of Prefix and Bond Number.</description>
@@ -270,10 +768,10 @@ Just like your currency &amp;#x1f4b5; your bond &amp;#x1f4c4; has a unique numbe
     
     <item>
       <title>Electoral Bond Data - 1</title>
-      <link>http://localhost:1313/posts/project--1/</link>
+      <link>https://dadscareerpedia.github.io/posts/project--1/</link>
       <pubDate>Mon, 22 Apr 2024 08:09:41 +0530</pubDate>
       
-      <guid>http://localhost:1313/posts/project--1/</guid>
+      <guid>https://dadscareerpedia.github.io/posts/project--1/</guid>
       <description>Domain Knowledge : Description: In a significant development affecting political transparency in India, the Supreme Court delivered a landmark judgment striking down the Electoral Bond scheme. This ruling, grounded in the principle that anonymity in political funding undermines voters&amp;rsquo; right to information, mandates transparency in political party funding sources. The decision represents a crucial step in India&amp;rsquo;s ongoing efforts to enhance transparency and accountability in political financing, aligning with democratic values and public demands for openness.</description>
       <content:encoded><![CDATA[<hr>
 <h1 id="domain-knowledge-">Domain Knowledge :</h1>
